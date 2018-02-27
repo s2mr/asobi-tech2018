@@ -7,8 +7,17 @@
 //
 
 import Foundation
+import RxSwift
 
 class StoryViewModel {
 
-    
+    var chats: [Chat] = [] // for present
+
+    private let chatManager = ChatManager.shared
+
+    func nextChat() {
+        if let c = chatManager.getNextChat() {
+            self.chats.append(c)
+        }
+    }
 }

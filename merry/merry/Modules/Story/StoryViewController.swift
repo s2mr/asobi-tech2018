@@ -18,12 +18,9 @@ class StoryViewController: UIViewController {
     private let viewModel = StoryViewModel()
     private let disposeBag = DisposeBag()
 
-    let chats: [String] = ["aaa","vvv","ccc"]
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-//        self.view.backgroundColor = .blue
         tableView.backgroundColor = .blue
     }
 
@@ -60,7 +57,8 @@ extension StoryViewController {
     }
 
     @objc func backgroundTapped() {
-        print("backgroundTapped()")
+        viewModel.nextChat()
+        self.tableView.reloadData()
     }
 }
 
@@ -70,25 +68,23 @@ extension StoryViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.chats.count
+        return viewModel.chats.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let chat = self.chats[indexPath.row]
+        let chat = viewModel.chats[indexPath.row]
         if indexPath.row % 2 == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MyChat") as! MyChatViewCell
             cell.clipsToBounds = true
             // Todo: isRead
-            cell.updateCell(text: chat, time: "chat.time", isRead: true)
+            cell.updateCell(text: chat.text, time: "chat.time", isRead: true)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "YourChat") as! YourChatViewCell
             cell.clipsToBounds = true
-            cell.updateCell(text: chat, time: "chat.time")
+            cell.updateCell(text: chat.text, time: "chat.time")
             return cell
         }
-
-        return UITableViewCell()
     }
 }
 
