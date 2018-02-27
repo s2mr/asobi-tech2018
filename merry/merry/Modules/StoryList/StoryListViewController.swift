@@ -40,7 +40,8 @@ extension StoryListViewController: UITableViewDelegate {
         } else if indexPath.row == 1 {
             let vc = UIStoryboard(name: "Call", bundle: nil).instantiateInitialViewController()!
 
-            present(vc, animated: true, completion: nil)
+//            present(vc, animated: true, completion: nil)
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

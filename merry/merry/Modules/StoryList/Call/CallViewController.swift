@@ -8,17 +8,42 @@
 
 import UIKit
 import AudioToolbox
+import AVFoundation
 
 class CallViewController: UIViewController {
 
     var timer = Timer()
     
+    var audioPlayer = AVAudioPlayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         timer = Timer.scheduledTimer(withTimeInterval: 0.6, repeats: true, block: vibrate)
-
+        
         // Do any additional setup after loading the view.
+//        timer.inval
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        audioPlayer.stop()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        do{
+            let filePath = Bundle.main.path(forResource: "ring", ofType: "mp3")
+            let audioPath = URL(fileURLWithPath: filePath!)
+            audioPlayer = try AVAudioPlayer(contentsOf: audioPath)
+            audioPlayer.numberOfLoops = -1
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
+        }catch{
+            print("error play ring sound")
+        }
     }
 
     override func didReceiveMemoryWarning() {
