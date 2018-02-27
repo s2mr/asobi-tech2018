@@ -78,12 +78,12 @@ extension StoryViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MyChat") as! MyChatViewCell
             cell.clipsToBounds = true
             // Todo: isRead
-            cell.updateCell(text: chat.text, time: "chat.time", isRead: true)
+            cell.updateCell(text: chat.text, time: "", isRead: true)
             return cell
         case .other:
             let cell = tableView.dequeueReusableCell(withIdentifier: "YourChat") as! YourChatViewCell
             cell.clipsToBounds = true
-            cell.updateCell(text: chat.text, time: "chat.time")
+            cell.updateCell(text: chat.text, time: "")
             return cell
         }
     }

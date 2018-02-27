@@ -11,8 +11,7 @@ import UIKit
 class MyChatViewCell: UITableViewCell {
 	
 	@IBOutlet weak var textView: UITextView!
-	@IBOutlet weak var timeLabel: UILabel!
-	@IBOutlet weak var readLabel: UILabel!
+	@IBOutlet weak private var readLabel: UILabel!
 	
 	@IBOutlet weak var textViewWidthConstraint: NSLayoutConstraint!
 	
@@ -33,9 +32,11 @@ class MyChatViewCell: UITableViewCell {
 extension MyChatViewCell {
 	func updateCell(text: String, time: String, isRead: Bool) {
 		self.textView?.text = text
-		self.timeLabel?.text = time
-		self.readLabel?.isHidden = !isRead
-		
+//        self.timeLabel?.text = time
+//        self.readLabel?.isHidden = !isRead
+        self.readLabel.text = "既読"
+//        self.timeLabel.text = "既読" // FIXME
+
 		let frame = CGSize(width: self.frame.width - 8, height: CGFloat.greatestFiniteMagnitude)
 		var rect = self.textView.sizeThatFits(frame)
 		if(rect.width<30){
