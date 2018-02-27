@@ -19,8 +19,6 @@ class CallViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        timer = Timer.scheduledTimer(withTimeInterval: 0.6, repeats: true, block: vibrate)
-        
         // Do any additional setup after loading the view.
 //        timer.inval
     }
@@ -28,11 +26,14 @@ class CallViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        timer.invalidate()
         audioPlayer.stop()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 0.6, repeats: true, block: vibrate)
         
         do{
             let filePath = Bundle.main.path(forResource: "ring", ofType: "mp3")

@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import AudioToolbox
+import AVFoundation
 
 class MerryTalkViewController: UIViewController {
 
+    var audioPlayer = AVAudioPlayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //テストです
+        playVoice(fileName: "why", type: "mp3")
         // Do any additional setup after loading the view.
     }
 
@@ -21,6 +27,18 @@ class MerryTalkViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    public func playVoice(fileName:String,type:String){
+        do{
+            let filePath = Bundle.main.path(forResource: fileName, ofType: type)
+            let audioPath = URL(fileURLWithPath: filePath!)
+            audioPlayer = try AVAudioPlayer(contentsOf: audioPath)
+            audioPlayer.numberOfLoops = 0
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
+        }catch{
+            print("error play merry voice")
+        }
+    }
 
     /*
     // MARK: - Navigation
