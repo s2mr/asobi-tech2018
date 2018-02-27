@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jAo-Y7-JMv">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Call View Controller-->
+        <scene sceneID="EHa-zf-bsZ">
+            <objects>
+                <viewController id="jAo-Y7-JMv" customClass="CallViewController" customModule="merry" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U1h-w9-tH0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llk-Vy-OmO">
+                                <rect key="frame" x="154.5" y="508" width="65" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="応答"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="マリー" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szB-AT-N93">
+                                <rect key="frame" x="139" y="114.5" width="97" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="szB-AT-N93" firstAttribute="centerY" secondItem="U1h-w9-tH0" secondAttribute="centerY" constant="-200" id="1gQ-mO-boQ"/>
+                            <constraint firstItem="szB-AT-N93" firstAttribute="centerX" secondItem="U1h-w9-tH0" secondAttribute="centerX" id="Ix0-0T-3kg"/>
+                            <constraint firstItem="llk-Vy-OmO" firstAttribute="centerX" secondItem="U1h-w9-tH0" secondAttribute="centerX" id="YH5-4S-ewL"/>
+                            <constraint firstItem="llk-Vy-OmO" firstAttribute="centerY" secondItem="U1h-w9-tH0" secondAttribute="centerY" constant="200" id="rEY-6S-xBp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gfA-Dx-uOe"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lAm-X8-YpK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-90.400000000000006" y="241.52923538230885"/>
+        </scene>
+    </scenes>
+</document>
