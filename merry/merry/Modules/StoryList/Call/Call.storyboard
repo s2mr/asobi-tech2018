@@ -22,6 +22,9 @@
                                 <rect key="frame" x="154.5" y="508" width="65" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="応答"/>
+                                <connections>
+                                    <action selector="response:" destination="jAo-Y7-JMv" eventType="touchDown" id="ZCZ-ht-I7J"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="マリー" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szB-AT-N93">
                                 <rect key="frame" x="139" y="114.5" width="97" height="38.5"/>
@@ -39,6 +42,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gfA-Dx-uOe"/>
                     </view>
+                    <connections>
+                        <outlet property="callResponse" destination="llk-Vy-OmO" id="06i-Nc-wuw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lAm-X8-YpK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -54,7 +54,16 @@ class CallViewController: UIViewController {
     func vibrate(timer: Timer) {
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
-
+    
+    
+    @IBOutlet weak var callResponse: UIButton!
+    
+    @IBAction func response(_ sender: Any) {
+        let vc = UIStoryboard(name: "MerryTalk", bundle: nil).instantiateInitialViewController()!
+        
+        //            present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     /*
     // MARK: - Navigation
 
