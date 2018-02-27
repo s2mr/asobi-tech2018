@@ -18,7 +18,7 @@ class StoryViewModel {
 
     var choices: PublishSubject<[Chat.Choice]> = PublishSubject()
 
-    private let chatManager = ChatManager.shared
+    private let chatManager = ChatManager()
 
     func nextChat() {
         guard let c = chatManager.getNextChat() else { return }

@@ -39,7 +39,7 @@ class StoryFooterView: UIView {
             b?.layer.cornerRadius = 8
             b?.tintColor = .white
             b?.backgroundColor = .black
-            b?.alpha = 0.8
+            b?.alpha = 0.6
         }
     }
 
