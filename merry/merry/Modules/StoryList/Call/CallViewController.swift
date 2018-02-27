@@ -56,14 +56,25 @@ class CallViewController: UIViewController {
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
     
+    public func playVoice(fileName:String,type:String){
+        do{
+            let filePath = Bundle.main.path(forResource: fileName, ofType: type)
+            let audioPath = URL(fileURLWithPath: filePath!)
+            audioPlayer = try AVAudioPlayer(contentsOf: audioPath)
+            audioPlayer.delegate = self
+            audioPlayer.numberOfLoops = 0
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
+        }catch{
+            print("error play merry voice")
+        }
+    }
     
     @IBOutlet weak var callResponse: UIButton!
     
     @IBAction func response(_ sender: Any) {
-        let vc = UIStoryboard(name: "MerryTalk", bundle: nil).instantiateInitialViewController()!
-        
-        //            present(vc, animated: true, completion: nil)
-        self.navigationController?.pushViewController(vc, animated: true)
+        callResponse.isHidden = true
+        playVoice(fileName: "why", type: "mp3")
     }
     /*
     // MARK: - Navigation
@@ -75,4 +86,13 @@ class CallViewController: UIViewController {
     }
     */
 
+}
+
+extension CallViewController: AVAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        if flag {
+            //self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
 }
