@@ -14,7 +14,7 @@ class StoryListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "Story"
         let nib = UINib(nibName: "StoryListTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "StoryListTableViewCell")
     }
@@ -29,5 +29,14 @@ extension StoryListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StoryListTableViewCell") as! StoryListTableViewCell
         return cell
+    }
+}
+
+extension StoryListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            let vc = UIStoryboard(name: "Story", bundle: nil).instantiateInitialViewController()!
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
