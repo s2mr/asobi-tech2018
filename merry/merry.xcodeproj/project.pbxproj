@@ -122,8 +122,6 @@
 		6E7BF3D8204568C000F60826 /* StoryList */ = {
 			isa = PBXGroup;
 			children = (
-				6E7BF3E42045722600F60826 /* MyChatViewCell */,
-				6E7BF3E72045722600F60826 /* YourChatViewCell */,
 				6E7BF3C7204567C500F60826 /* StoryListViewController.swift */,
 				6E7BF3C9204567C500F60826 /* StoryList.storyboard */,
 				6E7BF3D9204568CE00F60826 /* StoryListViewModel.swift */,
@@ -136,6 +134,8 @@
 		6E7BF3DF20456FF600F60826 /* Story */ = {
 			isa = PBXGroup;
 			children = (
+				6E7BF3E42045722600F60826 /* MyChatViewCell */,
+				6E7BF3E72045722600F60826 /* YourChatViewCell */,
 				6E7BF3E02045700600F60826 /* StoryViewController.swift */,
 				6E7BF3E22045700D00F60826 /* Story.storyboard */,
 				6E7BF3F420459BD400F60826 /* StoryViewModel.swift */,

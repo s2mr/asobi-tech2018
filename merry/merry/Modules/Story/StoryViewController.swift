@@ -21,7 +21,6 @@ class StoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        tableView.backgroundColor = .blue
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,6 +41,7 @@ class StoryViewController: UIViewController {
 
 extension StoryViewController {
     func setupUI() {
+        tableView.backgroundColor = .black
         tableView.separatorColor = UIColor.clear
         tableView.estimatedRowHeight = 10000
         tableView.rowHeight = UITableViewAutomaticDimension
