@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B478604BEE62FE7BBC0599B /* Pods_merry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5FA9172C87F29DC27B1A6A5 /* Pods_merry.framework */; };
 		6E7BF3C6204567C500F60826 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BF3C5204567C500F60826 /* AppDelegate.swift */; };
 		6E7BF3C8204567C500F60826 /* StoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BF3C7204567C500F60826 /* StoryListViewController.swift */; };
 		6E7BF3CB204567C500F60826 /* StoryList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E7BF3C9204567C500F60826 /* StoryList.storyboard */; };
@@ -21,6 +22,8 @@
 		6E7BF3EB2045722600F60826 /* MyChatViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E7BF3E62045722600F60826 /* MyChatViewCell.xib */; };
 		6E7BF3EC2045722600F60826 /* YourChatViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BF3E82045722600F60826 /* YourChatViewCell.swift */; };
 		6E7BF3ED2045722600F60826 /* YourChatViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E7BF3E92045722600F60826 /* YourChatViewCell.xib */; };
+		6E7BF3EF2045738400F60826 /* MyBalloonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BF3EE2045738400F60826 /* MyBalloonView.swift */; };
+		6E7BF3F3204573C000F60826 /* YourBalloonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BF3F2204573C000F60826 /* YourBalloonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,11 @@
 		6E7BF3E62045722600F60826 /* MyChatViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyChatViewCell.xib; sourceTree = "<group>"; };
 		6E7BF3E82045722600F60826 /* YourChatViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourChatViewCell.swift; sourceTree = "<group>"; };
 		6E7BF3E92045722600F60826 /* YourChatViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YourChatViewCell.xib; sourceTree = "<group>"; };
+		6E7BF3EE2045738400F60826 /* MyBalloonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBalloonView.swift; sourceTree = "<group>"; };
+		6E7BF3F2204573C000F60826 /* YourBalloonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourBalloonView.swift; sourceTree = "<group>"; };
+		9820E4943372C48FE2F9C23D /* Pods-merry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merry.release.xcconfig"; path = "Pods/Target Support Files/Pods-merry/Pods-merry.release.xcconfig"; sourceTree = "<group>"; };
+		B5FA9172C87F29DC27B1A6A5 /* Pods_merry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_merry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7F242DE7AEEB80392C5B436 /* Pods-merry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merry.debug.xcconfig"; path = "Pods/Target Support Files/Pods-merry/Pods-merry.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,17 +55,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B478604BEE62FE7BBC0599B /* Pods_merry.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32800799D6F1F7B670A2C9BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5FA9172C87F29DC27B1A6A5 /* Pods_merry.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6E7BF3B9204567C500F60826 = {
 			isa = PBXGroup;
 			children = (
 				6E7BF3C4204567C500F60826 /* merry */,
 				6E7BF3C3204567C500F60826 /* Products */,
+				B80DCED89D422C3B2A7B801E /* Pods */,
+				32800799D6F1F7B670A2C9BA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +135,7 @@
 		6E7BF3E42045722600F60826 /* MyChatViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				6E7BF3EE2045738400F60826 /* MyBalloonView.swift */,
 				6E7BF3E52045722600F60826 /* MyChatViewCell.swift */,
 				6E7BF3E62045722600F60826 /* MyChatViewCell.xib */,
 			);
@@ -126,12 +146,22 @@
 		6E7BF3E72045722600F60826 /* YourChatViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				6E7BF3F2204573C000F60826 /* YourBalloonView.swift */,
 				6E7BF3E82045722600F60826 /* YourChatViewCell.swift */,
 				6E7BF3E92045722600F60826 /* YourChatViewCell.xib */,
 			);
 			name = YourChatViewCell;
 			path = merry/Modules/Story/YourChatViewCell;
 			sourceTree = SOURCE_ROOT;
+		};
+		B80DCED89D422C3B2A7B801E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F7F242DE7AEEB80392C5B436 /* Pods-merry.debug.xcconfig */,
+				9820E4943372C48FE2F9C23D /* Pods-merry.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -140,9 +170,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E7BF3D4204567C500F60826 /* Build configuration list for PBXNativeTarget "merry" */;
 			buildPhases = (
+				0B8E8F9032296EAE0F22C268 /* [CP] Check Pods Manifest.lock */,
 				6E7BF3BE204567C500F60826 /* Sources */,
 				6E7BF3BF204567C500F60826 /* Frameworks */,
 				6E7BF3C0204567C500F60826 /* Resources */,
+				1A0299D43C0EC92682EE2138 /* [CP] Embed Pods Frameworks */,
+				81C7872C7C1C74457684FA38 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -204,6 +237,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0B8E8F9032296EAE0F22C268 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-merry-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1A0299D43C0EC92682EE2138 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-merry/Pods-merry-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-merry/Pods-merry-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81C7872C7C1C74457684FA38 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-merry/Pods-merry-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6E7BF3BE204567C500F60826 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -215,7 +304,9 @@
 				6E7BF3EC2045722600F60826 /* YourChatViewCell.swift in Sources */,
 				6E7BF3DA204568CE00F60826 /* StoryListViewModel.swift in Sources */,
 				6E7BF3C6204567C500F60826 /* AppDelegate.swift in Sources */,
+				6E7BF3EF2045738400F60826 /* MyBalloonView.swift in Sources */,
 				6E7BF3DD2045697C00F60826 /* StoryListTableViewCell.swift in Sources */,
+				6E7BF3F3204573C000F60826 /* YourBalloonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +441,7 @@
 		};
 		6E7BF3D5204567C500F60826 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7F242DE7AEEB80392C5B436 /* Pods-merry.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -365,6 +457,7 @@
 		};
 		6E7BF3D6204567C500F60826 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9820E4943372C48FE2F9C23D /* Pods-merry.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
