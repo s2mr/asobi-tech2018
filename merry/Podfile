@@ -8,5 +8,6 @@ target 'merry' do
   # Pods for merry
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'SnapKit'
 
 end
