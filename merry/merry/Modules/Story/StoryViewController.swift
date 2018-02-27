@@ -12,8 +12,11 @@ import RxSwift
 
 class StoryViewController: UIViewController {
 
-    fileprivate let disposeBag = DisposeBag()
+
     @IBOutlet weak var tableView: UITableView!
+
+    private let viewModel = StoryViewModel()
+    private let disposeBag = DisposeBag()
 
     let chats: [String] = ["aaa","vvv","ccc"]
 
