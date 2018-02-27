@@ -30,12 +30,14 @@ struct Chat: Unboxable {
 
     let id: Int
     let text: String
+	let type: String
     let choices: [Choice]
     let owner: Owner
 
     init(unboxer: Unboxer) throws {
         id = try unboxer.unbox(key: "id")
         text = try unboxer.unbox(key: "text")
+		type = try unboxer.unbox(key: "type")
         choices = try unboxer.unbox(key: "choices")
         owner = .other
     }
