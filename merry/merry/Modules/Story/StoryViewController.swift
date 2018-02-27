@@ -73,13 +73,14 @@ extension StoryViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let chat = viewModel.chats[indexPath.row]
-        if indexPath.row % 2 == 0 {
+        switch chat.owner {
+        case .self:
             let cell = tableView.dequeueReusableCell(withIdentifier: "MyChat") as! MyChatViewCell
             cell.clipsToBounds = true
             // Todo: isRead
             cell.updateCell(text: chat.text, time: "chat.time", isRead: true)
             return cell
-        } else {
+        case .other:
             let cell = tableView.dequeueReusableCell(withIdentifier: "YourChat") as! YourChatViewCell
             cell.clipsToBounds = true
             cell.updateCell(text: chat.text, time: "chat.time")

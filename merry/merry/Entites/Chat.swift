@@ -23,13 +23,20 @@ struct Chat: Unboxable {
         }
     }
 
+    enum Owner {
+        case `self`
+        case other
+    }
+
     let id: Int
     let text: String
     let choices: [Choice]
+    let owner: Owner
 
     init(unboxer: Unboxer) throws {
         id = try unboxer.unbox(key: "id")
         text = try unboxer.unbox(key: "text")
         choices = try unboxer.unbox(key: "choices")
+        owner = .other
     }
 }

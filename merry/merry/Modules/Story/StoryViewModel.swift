@@ -13,11 +13,13 @@ class StoryViewModel {
 
     var chats: [Chat] = [] // for present
 
+    var choices: PublishSubject<[Chat.Choice]> = PublishSubject()
+
     private let chatManager = ChatManager.shared
 
     func nextChat() {
-        if let c = chatManager.getNextChat() {
-            self.chats.append(c)
-        }
+        guard let c = chatManager.getNextChat() else { return }
+        self.chats.append(c)
+        self.choices.onNext(c.choices)
     }
 }
