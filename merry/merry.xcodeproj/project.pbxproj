@@ -30,6 +30,10 @@
 		D623E8F420457AC4001A47F5 /* Call.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D623E8F320457AC4001A47F5 /* Call.storyboard */; };
 		D623E8F72045A7E6001A47F5 /* ring.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D623E8F62045A7E6001A47F5 /* ring.mp3 */; };
 		D623E8FD2045B3EE001A47F5 /* why.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D623E8FC2045B3ED001A47F5 /* why.mp3 */; };
+		6E7BF3F520459BD400F60826 /* StoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BF3F420459BD400F60826 /* StoryViewModel.swift */; };
+		6E7BF3F820459C9C00F60826 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BF3F720459C9C00F60826 /* Chat.swift */; };
+		6E7BF3FB20459D7900F60826 /* StubChatText.json in Resources */ = {isa = PBXBuildFile; fileRef = 6E7BF3FA20459D7900F60826 /* StubChatText.json */; };
+		6E7BF3FD20459F3D00F60826 /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BF3FC20459F3D00F60826 /* ChatManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +55,10 @@
 		6E7BF3E92045722600F60826 /* YourChatViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YourChatViewCell.xib; sourceTree = "<group>"; };
 		6E7BF3EE2045738400F60826 /* MyBalloonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBalloonView.swift; sourceTree = "<group>"; };
 		6E7BF3F2204573C000F60826 /* YourBalloonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourBalloonView.swift; sourceTree = "<group>"; };
+		6E7BF3F420459BD400F60826 /* StoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModel.swift; sourceTree = "<group>"; };
+		6E7BF3F720459C9C00F60826 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		6E7BF3FA20459D7900F60826 /* StubChatText.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StubChatText.json; sourceTree = "<group>"; };
+		6E7BF3FC20459F3D00F60826 /* ChatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
 		9820E4943372C48FE2F9C23D /* Pods-merry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merry.release.xcconfig"; path = "Pods/Target Support Files/Pods-merry/Pods-merry.release.xcconfig"; sourceTree = "<group>"; };
 		B5FA9172C87F29DC27B1A6A5 /* Pods_merry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_merry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60301902045C0C300530BAD /* SupriseCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupriseCameraViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +113,8 @@
 			children = (
 				D623E8F52045A7CD001A47F5 /* Sound */,
 				6E7BF3C5204567C500F60826 /* AppDelegate.swift */,
+				6E7BF3F920459D7900F60826 /* Sources */,
+				6E7BF3F620459C8400F60826 /* Entites */,
 				6E7BF3D7204568B100F60826 /* Modules */,
 				6E7BF3CC204567C500F60826 /* Assets.xcassets */,
 				6E7BF3CE204567C500F60826 /* LaunchScreen.storyboard */,
@@ -141,8 +151,11 @@
 		6E7BF3DF20456FF600F60826 /* Story */ = {
 			isa = PBXGroup;
 			children = (
+				6E7BF3E42045722600F60826 /* MyChatViewCell */,
+				6E7BF3E72045722600F60826 /* YourChatViewCell */,
 				6E7BF3E02045700600F60826 /* StoryViewController.swift */,
 				6E7BF3E22045700D00F60826 /* Story.storyboard */,
+				6E7BF3F420459BD400F60826 /* StoryViewModel.swift */,
 			);
 			path = Story;
 			sourceTree = "<group>";
@@ -168,6 +181,23 @@
 			name = YourChatViewCell;
 			path = merry/Modules/Story/YourChatViewCell;
 			sourceTree = SOURCE_ROOT;
+		};
+		6E7BF3F620459C8400F60826 /* Entites */ = {
+			isa = PBXGroup;
+			children = (
+				6E7BF3F720459C9C00F60826 /* Chat.swift */,
+				6E7BF3FC20459F3D00F60826 /* ChatManager.swift */,
+			);
+			path = Entites;
+			sourceTree = "<group>";
+		};
+		6E7BF3F920459D7900F60826 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6E7BF3FA20459D7900F60826 /* StubChatText.json */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
 		};
 		B80DCED89D422C3B2A7B801E /* Pods */ = {
 			isa = PBXGroup;
@@ -275,6 +305,7 @@
 				D623E8F420457AC4001A47F5 /* Call.storyboard in Resources */,
 				6E7BF3ED2045722600F60826 /* YourChatViewCell.xib in Resources */,
 				6E7BF3EB2045722600F60826 /* MyChatViewCell.xib in Resources */,
+				6E7BF3FB20459D7900F60826 /* StubChatText.json in Resources */,
 				6E7BF3E32045700D00F60826 /* Story.storyboard in Resources */,
 				6E7BF3CB204567C500F60826 /* StoryList.storyboard in Resources */,
 				6E7BF3DE2045697C00F60826 /* StoryListTableViewCell.xib in Resources */,
@@ -312,12 +343,14 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Unbox/Unbox.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Unbox.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -350,12 +383,15 @@
 				D60301912045C0C300530BAD /* SupriseCameraViewController.swift in Sources */,
 				6E7BF3E12045700600F60826 /* StoryViewController.swift in Sources */,
 				6E7BF3C8204567C500F60826 /* StoryListViewController.swift in Sources */,
+				6E7BF3FD20459F3D00F60826 /* ChatManager.swift in Sources */,
 				6E7BF3EC2045722600F60826 /* YourChatViewCell.swift in Sources */,
 				6E7BF3DA204568CE00F60826 /* StoryListViewModel.swift in Sources */,
 				6E7BF3C6204567C500F60826 /* AppDelegate.swift in Sources */,
+				6E7BF3F820459C9C00F60826 /* Chat.swift in Sources */,
 				6E7BF3EF2045738400F60826 /* MyBalloonView.swift in Sources */,
 				6E7BF3DD2045697C00F60826 /* StoryListTableViewCell.swift in Sources */,
 				D623E8F220457ABC001A47F5 /* CallViewController.swift in Sources */,
+				6E7BF3F520459BD400F60826 /* StoryViewModel.swift in Sources */,
 				6E7BF3F3204573C000F60826 /* YourBalloonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

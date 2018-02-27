@@ -9,5 +9,6 @@ target 'merry' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'SnapKit'
+  pod 'Unbox'
 
 end

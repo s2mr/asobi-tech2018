@@ -17,6 +17,9 @@ class StoryListViewController: UIViewController {
         self.title = "Story"
         let nib = UINib(nibName: "StoryListTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "StoryListTableViewCell")
+        tableView.rowHeight = 70
+        tableView.estimatedRowHeight = UITableViewAutomaticDimension
+//        tableView.rowHeight
     }
 }
 

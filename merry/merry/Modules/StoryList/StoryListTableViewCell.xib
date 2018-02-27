@@ -19,16 +19,16 @@
                 <rect key="frame" x="0.0" y="0.0" width="208" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XXO-gz-VI4">
-                        <rect key="frame" x="10" y="6.5" width="30" height="30"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="merry_icon" translatesAutoresizingMaskIntoConstraints="NO" id="XXO-gz-VI4">
+                        <rect key="frame" x="10" y="-1" width="45" height="45"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="HFS-di-PuJ"/>
-                            <constraint firstAttribute="width" constant="30" id="iSe-YY-fGw"/>
+                            <constraint firstAttribute="height" constant="45" id="HFS-di-PuJ"/>
+                            <constraint firstAttribute="width" constant="45" id="iSe-YY-fGw"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOA-q6-6u6">
-                        <rect key="frame" x="48" y="11" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="63" y="10" width="48" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -48,4 +48,7 @@
             <point key="canvasLocation" x="22" y="54"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="merry_icon" width="256" height="256"/>
+    </resources>
 </document>

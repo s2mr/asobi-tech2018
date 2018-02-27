@@ -12,16 +12,15 @@ import RxSwift
 
 class StoryViewController: UIViewController {
 
-    fileprivate let disposeBag = DisposeBag()
+
     @IBOutlet weak var tableView: UITableView!
 
-    let chats: [String] = ["aaa","vvv","ccc"]
+    private let viewModel = StoryViewModel()
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-//        self.view.backgroundColor = .blue
-        tableView.backgroundColor = .blue
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,6 +41,7 @@ class StoryViewController: UIViewController {
 
 extension StoryViewController {
     func setupUI() {
+        tableView.backgroundColor = .black
         tableView.separatorColor = UIColor.clear
         tableView.estimatedRowHeight = 10000
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -57,7 +57,8 @@ extension StoryViewController {
     }
 
     @objc func backgroundTapped() {
-        print("backgroundTapped()")
+        viewModel.nextChat()
+        self.tableView.reloadData()
     }
 }
 
@@ -67,25 +68,24 @@ extension StoryViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.chats.count
+        return viewModel.chats.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let chat = self.chats[indexPath.row]
-        if indexPath.row % 2 == 0 {
+        let chat = viewModel.chats[indexPath.row]
+        switch chat.owner {
+        case .self:
             let cell = tableView.dequeueReusableCell(withIdentifier: "MyChat") as! MyChatViewCell
             cell.clipsToBounds = true
             // Todo: isRead
-            cell.updateCell(text: chat, time: "chat.time", isRead: true)
+            cell.updateCell(text: chat.text, time: "", isRead: true)
             return cell
-        } else {
+        case .other:
             let cell = tableView.dequeueReusableCell(withIdentifier: "YourChat") as! YourChatViewCell
             cell.clipsToBounds = true
-            cell.updateCell(text: chat, time: "chat.time")
+            cell.updateCell(text: chat.text, time: "")
             return cell
         }
-
-        return UITableViewCell()
     }
 }
 

@@ -23,7 +23,6 @@ class StoryListTableViewCell: UITableViewCell {
     }
 
     private func setup() {
-        thumbnailImageView.image = nil
         titleLabel.text = "メリーさん"
     }
 }
