@@ -48,7 +48,7 @@ extension StoryListViewController: UITableViewDelegate {
         }else if indexPath.row == 2{
             let vc = UIStoryboard(name: "SurpriseCamera", bundle: nil).instantiateInitialViewController()!
             
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(vc, animated: false)
         }
     }
 }
