@@ -7,3 +7,29 @@
 //
 
 import Foundation
+import Unbox
+
+struct Chat: Unboxable {
+
+    struct Choice: Unboxable {
+        let score: Int
+        let text: String
+        let nextId: Int
+
+        init(unboxer: Unboxer) throws {
+            score = try unboxer.unbox(key: "score")
+            text = try unboxer.unbox(key: "text")
+            nextId = try unboxer.unbox(key: "nextId")
+        }
+    }
+
+    let id: Int
+    let text: String
+    let choices: [Choice]
+
+    init(unboxer: Unboxer) throws {
+        id = try unboxer.unbox(key: "id")
+        text = try unboxer.unbox(key: "text")
+        choices = try unboxer.unbox(key: "choices")
+    }
+}
