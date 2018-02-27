@@ -1,0 +1,90 @@
+{
+	"chatText": [
+				 {
+				 "id": 1,
+				 "text": "私メリーさん今あなたの学校にいるの",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "待ってたよ",
+							 "nextId": 2
+							 },
+							 {
+							 "score": 2,
+							 "text": "意外と速かったね",
+							 "nextId": 3
+							 },
+							 {
+							 "score": 3,
+							 "text": "まじで来たの！？",
+							 "nextId": 4
+							 }
+							 ]
+				 },
+				 {
+				 "id": 2,
+				 "text": "私メリーさん今あなたの家の前にいるの",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "そうなんだね？",
+							 "nextId": 2
+							 },
+							 {
+							 "score": 2,
+							 "text": "今日のご飯何食べた？",
+							 "nextId": 3
+							 },
+							 {
+							 "score": 3,
+							 "text": "えっ！？",
+							 "nextId": 4
+							 }
+							 ]
+				 },
+				 {
+				 "id": 3,
+				 "text": "私メリーさん今あなたの後ろにいるの",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "何だ？",
+							 "nextId": 2
+							 },
+							 {
+							 "score": 2,
+							 "text": "掛けてくるな！",
+							 "nextId": 3
+							 },
+							 {
+							 "score": 3,
+							 "text": "一緒におかし食べる?",
+							 "nextId": 4
+							 }
+							 ]
+				 },
+				 {
+				 "id": 4,
+				 "text": "私、メリーさん。今、ゴミ捨て場にいるの。",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "はやっ！",
+							 "nextId": 2
+							 },
+							 {
+							 "score": 2,
+							 "text": "次の交差点右に曲がって",
+							 "nextId": 3
+							 },
+							 {
+							 "score": 3,
+							 "text": "くさそう",
+							 "nextId": 4
+							 }
+							 ]
+				 }
+				 ]
+}
+
+
