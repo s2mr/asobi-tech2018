@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class CallViewController: UIViewController {
 
+    var timer = Timer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 0.6, repeats: true, block: vibrate)
 
         // Do any additional setup after loading the view.
     }
@@ -21,6 +26,9 @@ class CallViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func vibrate(timer: Timer) {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+    }
 
     /*
     // MARK: - Navigation
