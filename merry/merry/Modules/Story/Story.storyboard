@@ -19,19 +19,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gbv-p2-FWy">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="447"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="3nh-7D-mUk" id="0ql-BF-9Q1"/>
                                     <outlet property="delegate" destination="3nh-7D-mUk" id="lUF-K7-In8"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="70r-3G-zzq" customClass="StoryFooterView" customModule="merry" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="467" width="375" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="0Ia-my-ksR"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="GJF-aV-v70" firstAttribute="bottom" secondItem="70r-3G-zzq" secondAttribute="bottom" id="GQH-QO-lKC"/>
                             <constraint firstItem="Gbv-p2-FWy" firstAttribute="leading" secondItem="GJF-aV-v70" secondAttribute="leading" id="VVT-yf-Rzd"/>
-                            <constraint firstItem="GJF-aV-v70" firstAttribute="bottom" secondItem="Gbv-p2-FWy" secondAttribute="bottom" id="ndn-uW-zPh"/>
+                            <constraint firstItem="70r-3G-zzq" firstAttribute="leading" secondItem="GJF-aV-v70" secondAttribute="leading" id="cVK-Sw-fPK"/>
                             <constraint firstItem="GJF-aV-v70" firstAttribute="trailing" secondItem="Gbv-p2-FWy" secondAttribute="trailing" id="rIQ-zd-FVD"/>
+                            <constraint firstItem="70r-3G-zzq" firstAttribute="top" secondItem="Gbv-p2-FWy" secondAttribute="bottom" id="yVh-JQ-QIB"/>
+                            <constraint firstItem="GJF-aV-v70" firstAttribute="trailing" secondItem="70r-3G-zzq" secondAttribute="trailing" id="yeT-Ka-Tfr"/>
                             <constraint firstItem="Gbv-p2-FWy" firstAttribute="top" secondItem="GJF-aV-v70" secondAttribute="top" id="zl6-YV-95d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GJF-aV-v70"/>
@@ -42,7 +52,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Wx-wo-vSX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-54" y="173"/>
+            <point key="canvasLocation" x="-55.200000000000003" y="172.26386806596702"/>
         </scene>
     </scenes>
 </document>

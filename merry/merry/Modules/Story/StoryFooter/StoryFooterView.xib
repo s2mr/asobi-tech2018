@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StoryFooterView" customModule="merry" customModuleProvider="target">
+            <connections>
+                <outlet property="button1" destination="VbU-SM-PTC" id="p24-mx-siq"/>
+                <outlet property="button2" destination="a5S-5N-5jx" id="Fba-Lm-YJm"/>
+                <outlet property="button3" destination="EQ4-Cn-M1N" id="PjA-T4-zKp"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleAspectFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="471" height="316"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="select_bg" translatesAutoresizingMaskIntoConstraints="NO" id="WP0-Ax-My7">
+                    <rect key="frame" x="0.0" y="0.0" width="471" height="316"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5S-5N-5jx">
+                    <rect key="frame" x="30" y="140.5" width="411" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="KYg-lh-Cs7"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQ4-Cn-M1N">
+                    <rect key="frame" x="30" y="205.5" width="411" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="a3y-0b-QDj"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VbU-SM-PTC">
+                    <rect key="frame" x="30" y="75.5" width="411" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="xlF-Au-bce"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="EQ4-Cn-M1N" firstAttribute="top" secondItem="a5S-5N-5jx" secondAttribute="bottom" constant="30" id="1uq-iL-GP0"/>
+                <constraint firstItem="WP0-Ax-My7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="6vg-jR-FeZ"/>
+                <constraint firstItem="a5S-5N-5jx" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="7ZB-ht-W4w"/>
+                <constraint firstItem="VbU-SM-PTC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="Awj-F5-ygj"/>
+                <constraint firstItem="a5S-5N-5jx" firstAttribute="top" secondItem="VbU-SM-PTC" secondAttribute="bottom" constant="30" id="ERJ-f3-xg8"/>
+                <constraint firstItem="EQ4-Cn-M1N" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="EtO-hP-QKp"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="VbU-SM-PTC" secondAttribute="trailing" constant="30" id="MWI-nU-Y4U"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="WP0-Ax-My7" secondAttribute="bottom" id="S7F-6n-oLT"/>
+                <constraint firstItem="a5S-5N-5jx" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="SCu-vQ-ZM0"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="WP0-Ax-My7" secondAttribute="trailing" id="Twb-u8-tFs"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="EQ4-Cn-M1N" secondAttribute="trailing" constant="30" id="ZCy-HV-Jgp"/>
+                <constraint firstItem="WP0-Ax-My7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="d6F-Pv-rH2"/>
+                <constraint firstItem="VbU-SM-PTC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="okq-0i-DsI"/>
+                <constraint firstItem="EQ4-Cn-M1N" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="qRN-tc-M4F"/>
+                <constraint firstItem="a5S-5N-5jx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="th8-mE-bvx"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="a5S-5N-5jx" secondAttribute="trailing" constant="30" id="tmO-V2-MrJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="81.5" y="-121"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="select_bg" width="1125" height="773"/>
+    </resources>
+</document>
