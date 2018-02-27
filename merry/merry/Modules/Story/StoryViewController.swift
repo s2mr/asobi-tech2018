@@ -14,14 +14,14 @@ class StoryViewController: UIViewController {
 
     fileprivate let disposeBag = DisposeBag()
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var tableViewButtomConstraint: NSLayoutConstraint!
 
-    let chats: [String] = []
+    let chats: [String] = ["aaa","vvv","ccc"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-//        presenter?.loadChatRoom(index: chatRoomIndex)
+//        self.view.backgroundColor = .blue
+        tableView.backgroundColor = .blue
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,7 +31,6 @@ class StoryViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-//        presenter?.viewWillDisappear()
         self.tabBarController?.tabBar.isHidden = false
     }
 
@@ -73,18 +72,18 @@ extension StoryViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let chat = self.chats[indexPath.row]
-//        if chat.isMyChat() {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "MyChat") as! MyChatViewCell
-//            cell.clipsToBounds = true
-//            // Todo: isRead
-//            cell.updateCell(text: chat.text, time: chat.time, isRead: true)
-//            return cell
-//        } else {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "YourChat") as! YourChatViewCell
-//            cell.clipsToBounds = true
-//            cell.updateCell(text: chat.text, time: chat.time)
-//            return cell
-//        }
+        if indexPath.row % 2 == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MyChat") as! MyChatViewCell
+            cell.clipsToBounds = true
+            // Todo: isRead
+            cell.updateCell(text: chat, time: "chat.time", isRead: true)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "YourChat") as! YourChatViewCell
+            cell.clipsToBounds = true
+            cell.updateCell(text: chat, time: "chat.time")
+            return cell
+        }
 
         return UITableViewCell()
     }
