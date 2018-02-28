@@ -2,89 +2,221 @@
 	"chatText": [
 				 {
 				 "id": 1,
-				 "text": "私メリーさん今あなたの学校にいるの",
-				 "type": "call",
+				 "text": "引越しの際、古くなった外国製の人形、「メリー」を捨てた。",
+				 "type": "text",
 				 "choices": [
 							 {
 							 "score": 1,
-							 "text": "待ってたよ",
+							 "text": "汚い",
 							 "nextId": 2
 							 },
 							 {
 							 "score": 2,
-							 "text": "意外と速かったね",
-							 "nextId": 3
+							 "text": "しょうがない",
+							 "nextId": 2
 							 },
 							 {
 							 "score": 3,
-							 "text": "まじで来たの！？",
-							 "nextId": 4
+							 "text": "ごめん",
+							 "nextId": 2
 							 }
 							 ]
 				 },
 				 {
 				 "id": 2,
-				 "text": "私メリーさん今あなたの家の前にいるの",
+				 "text": "私、メリーさん。今、ゴミ捨て場にいるの",
 				 "type": "call",
 				 "choices": [
 							 {
 							 "score": 1,
-							 "text": "そうなんだね？",
-							 "nextId": 2
+							 "text": "くさそう",
+							 "nextId": 3
 							 },
 							 {
 							 "score": 2,
-							 "text": "今日のご飯何食べた？",
+							 "text": "えっ！？",
 							 "nextId": 3
 							 },
 							 {
 							 "score": 3,
-							 "text": "えっ！？",
-							 "nextId": 4
+							 "text": "メリーさん！？",
+							 "nextId": 3
 							 }
 							 ]
 				 },
 				 {
 				 "id": 3,
-				 "text": "私メリーさん今あなたの後ろにいるの",
+				 "text": "私、メリーさん。今、交番にいるの",
 				 "type": "call",
 				 "choices": [
 							 {
 							 "score": 1,
-							 "text": "何だ？",
-							 "nextId": 2
+							 "text": "捕まったの？",
+							 "nextId": 4
 							 },
 							 {
 							 "score": 2,
-							 "text": "掛けてくるな！",
-							 "nextId": 3
+							 "text": "どこのだろう？",
+							 "nextId": 4
 							 },
 							 {
 							 "score": 3,
-							 "text": "一緒におかし食べる?",
+							 "text": "何かあったの",
 							 "nextId": 4
 							 }
 							 ]
 				 },
 				 {
 				 "id": 4,
-				 "text": "私、メリーさん。今、ゴミ捨て場にいるの。",
+				 "text": "私、メリーさん。今、近くの病院にいるの",
 				 "type": "call",
 				 "choices": [
 							 {
 							 "score": 1,
-							 "text": "はやっ！",
-							 "nextId": 2
+							 "text": "間違い電話ですよ",
+							 "nextId": 5
 							 },
 							 {
 							 "score": 2,
-							 "text": "次の交差点右に曲がって",
-							 "nextId": 3
+							 "text": "近くの病院だ",
+							 "nextId": 5
 							 },
 							 {
 							 "score": 3,
-							 "text": "くさそう",
-							 "nextId": 4
+							 "text": "大丈夫？怪我したの？",
+							 "nextId": 5
+							 }
+							 ]
+				 },
+				 {
+				 "id": 5,
+				 "text": "私、メリーさん。今、郵便局の近くにいるの",
+				 "type": "call",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "すみません。人違いです",
+							 "nextId": 6
+							 },
+							 {
+							 "score": 2,
+							 "text": "近づいてきてる",
+							 "nextId": 6
+							 },
+							 {
+							 "score": 3,
+							 "text": "今度何か奢ります",
+							 "nextId": 6
+							 }
+							 ]
+				 },
+				 {
+				 "id": 6,
+				 "text": "私、メリーさん。今、あなたの家の前にいるの",
+				 "type": "call",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "次の交差点右に曲がって",
+							 "nextId": 7
+							 },
+							 {
+							 "score": 2,
+							 "text": "なんで！",
+							 "nextId": 7
+							 },
+							 {
+							 "score": 3,
+							 "text": "来てくれたの！嬉しい！",
+							 "nextId": 7
+							 }
+							 ]
+				 },
+				 {
+				 "id": 7,
+				 "text": "私、メリーさん。今、玄関にいるの",
+				 "type": "call",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "すみません。人違いです",
+							 "nextId": 8
+							 },
+							 {
+							 "score": 2,
+							 "text": "家の中にきた",
+							 "nextId": 8
+							 },
+							 {
+							 "score": 3,
+							 "text": "おかえり",
+							 "nextId": 8
+							 }
+							 ]
+				 },
+				 {
+				 "id": 8,
+				 "text": "私、メリーさん。今、廊下にいるの",
+				 "type": "call",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "間違い電話ですよ",
+							 "nextId": 9
+							 },
+							 {
+							 "score": 2,
+							 "text": "・・・",
+							 "nextId": 9
+							 },
+							 {
+							 "score": 3,
+							 "text": "まじで来たの！？",
+							 "nextId": 9
+							 }
+							 ]
+				 },
+				 {
+				 "id": 9,
+				 "text": "私、メリーさん。今、あなた部屋の前にいるの",
+				 "type": "call",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "一緒にご飯いかない？",
+							 "nextId": 10
+							 },
+							 {
+							 "score": 2,
+							 "text": "捨ててごめんなさい",
+							 "nextId": 10
+							 },
+							 {
+							 "score": 3,
+							 "text": "一緒にご飯いかない？",
+							 "nextId": 10
+							 }
+							 ]
+				 },
+				 {
+				 "id": 10,
+				 "text": "私、メリーさん。今、あなたの後ろにいるの",
+				 "type": "fin",
+				 "choices": [
+							 {
+							 "score": "",
+							 "text": "",
+							 "nextId": ""
+							 },
+							 {
+							 "score": "",
+							 "text": "",
+							 "nextId": ""
+							 },
+							 {
+							 "score": "",
+							 "text": "",
+							 "nextId": ""
 							 }
 							 ]
 				 }
