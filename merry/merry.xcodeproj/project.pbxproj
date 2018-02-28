@@ -24,18 +24,18 @@
 		6E7BF3ED2045722600F60826 /* YourChatViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E7BF3E92045722600F60826 /* YourChatViewCell.xib */; };
 		6E7BF3EF2045738400F60826 /* MyBalloonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BF3EE2045738400F60826 /* MyBalloonView.swift */; };
 		6E7BF3F3204573C000F60826 /* YourBalloonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BF3F2204573C000F60826 /* YourBalloonView.swift */; };
-		D60301912045C0C300530BAD /* SupriseCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60301902045C0C300530BAD /* SupriseCameraViewController.swift */; };
-		D60301932045C18400530BAD /* SurpriseCamera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D60301922045C18400530BAD /* SurpriseCamera.storyboard */; };
-		D623E8F220457ABC001A47F5 /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D623E8F120457ABC001A47F5 /* CallViewController.swift */; };
-		D623E8F420457AC4001A47F5 /* Call.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D623E8F320457AC4001A47F5 /* Call.storyboard */; };
-		D623E8F72045A7E6001A47F5 /* ring.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D623E8F62045A7E6001A47F5 /* ring.mp3 */; };
-		D623E8FD2045B3EE001A47F5 /* why.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D623E8FC2045B3ED001A47F5 /* why.mp3 */; };
 		6E7BF3F520459BD400F60826 /* StoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BF3F420459BD400F60826 /* StoryViewModel.swift */; };
 		6E7BF3F820459C9C00F60826 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BF3F720459C9C00F60826 /* Chat.swift */; };
 		6E7BF3FB20459D7900F60826 /* StubChatText.json in Resources */ = {isa = PBXBuildFile; fileRef = 6E7BF3FA20459D7900F60826 /* StubChatText.json */; };
 		6E7BF3FD20459F3D00F60826 /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BF3FC20459F3D00F60826 /* ChatManager.swift */; };
 		6E7BF4002045C19900F60826 /* StoryFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E7BF3FF2045C19900F60826 /* StoryFooterView.xib */; };
 		6E7BF4022045C7E700F60826 /* StoryFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BF4012045C7E700F60826 /* StoryFooterView.swift */; };
+		D60301912045C0C300530BAD /* SupriseCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60301902045C0C300530BAD /* SupriseCameraViewController.swift */; };
+		D60301932045C18400530BAD /* SurpriseCamera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D60301922045C18400530BAD /* SurpriseCamera.storyboard */; };
+		D623E8F220457ABC001A47F5 /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D623E8F120457ABC001A47F5 /* CallViewController.swift */; };
+		D623E8F420457AC4001A47F5 /* Call.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D623E8F320457AC4001A47F5 /* Call.storyboard */; };
+		D623E8F72045A7E6001A47F5 /* ring.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D623E8F62045A7E6001A47F5 /* ring.mp3 */; };
+		D623E8FD2045B3EE001A47F5 /* why.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D623E8FC2045B3ED001A47F5 /* why.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +130,7 @@
 		6E7BF3D7204568B100F60826 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D603018F2045C09700530BAD /* FrontCameraSurprise */,
 				6E7BF3DF20456FF600F60826 /* Story */,
 				6E7BF3D8204568C000F60826 /* StoryList */,
 			);
@@ -139,7 +140,6 @@
 		6E7BF3D8204568C000F60826 /* StoryList */ = {
 			isa = PBXGroup;
 			children = (
-				D603018F2045C09700530BAD /* FrontCameraSurprise */,
 				D623E8F020457AA9001A47F5 /* Call */,
 				6E7BF3E42045722600F60826 /* MyChatViewCell */,
 				6E7BF3E72045722600F60826 /* YourChatViewCell */,
@@ -156,8 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				6E7BF3FE2045C15100F60826 /* StoryFooter */,
-				6E7BF3E42045722600F60826 /* MyChatViewCell */,
-				6E7BF3E72045722600F60826 /* YourChatViewCell */,
 				6E7BF3E02045700600F60826 /* StoryViewController.swift */,
 				6E7BF3E22045700D00F60826 /* Story.storyboard */,
 				6E7BF3F420459BD400F60826 /* StoryViewModel.swift */,

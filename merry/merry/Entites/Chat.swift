@@ -28,16 +28,22 @@ struct Chat: Unboxable {
         case other
     }
 
+    enum ChatType: String {
+        case text = "text"
+        case call = "call"
+        case fin = "fin"
+    }
+
     let id: Int
     let text: String
-	let type: String
+	let type: ChatType
     let choices: [Choice]
     let owner: Owner
 
     init(unboxer: Unboxer) throws {
         id = try unboxer.unbox(key: "id")
         text = try unboxer.unbox(key: "text")
-		type = try unboxer.unbox(key: "type")
+		type = ChatType(rawValue: try unboxer.unbox(key: "type")) ?? .text
         choices = try unboxer.unbox(key: "choices")
         owner = .other
     }
@@ -45,7 +51,7 @@ struct Chat: Unboxable {
     init(_ c: Choice) {
         id = -1
         text = c.text
-        type = ""
+        type = .text
         choices = []
         owner = .self
     }

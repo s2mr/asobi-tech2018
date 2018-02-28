@@ -90,6 +90,20 @@ extension StoryViewController {
                 self?.viewModel.nextChat(nextId: c.nextId)
                 self?.tableView.reloadData()
             }).disposed(by: disposeBag)
+
+        viewModel.state.subscribe(onNext: { (s) in
+            switch s {
+            case .normal:
+                print("[state] normal")
+            case .calling:
+                print("[state] calling")
+            case .clear:
+                print("[state] clear")
+            case .gameover:
+                
+                print("[state] gameover")
+            }
+        }).disposed(by: disposeBag)
     }
 
     @objc func backgroundTapped() {
