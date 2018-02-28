@@ -91,13 +91,14 @@ extension StoryViewController {
 
                     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8){
                         imageView.removeFromSuperview()
+                        wself.viewModel.appendChoiceIntoChats(c)
                         wself.viewModel.nextChat(nextId: c.nextId)
                     }
                 }else{
                     self?.comboManager.endCombo()
+                    wself.viewModel.appendChoiceIntoChats(c)
                     wself.viewModel.nextChat(nextId: c.nextId)
                 }
-                wself.viewModel.appendChoiceIntoChats(c)
                 wself.tableView.reloadData()
                 wself.tableView.scrollToRow(at: IndexPath(row: wself.viewModel.chats.count-1, section: 0), at: .bottom, animated: true)
             }).disposed(by: disposeBag)
@@ -113,13 +114,14 @@ extension StoryViewController {
 
                     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8){
                         imageView.removeFromSuperview()
+                        wself.viewModel.appendChoiceIntoChats(c)
                         wself.viewModel.nextChat(nextId: c.nextId)
                     }
                 }else{
                     self?.comboManager.endCombo()
+                    wself.viewModel.appendChoiceIntoChats(c)
                     wself.viewModel.nextChat(nextId: c.nextId)
                 }
-                wself.viewModel.appendChoiceIntoChats(c)
                 wself.tableView.reloadData()
                 wself.tableView.scrollToRow(at: IndexPath(row: wself.viewModel.chats.count-1, section: 0), at: .bottom, animated: true)
             }).disposed(by: disposeBag)
@@ -135,13 +137,14 @@ extension StoryViewController {
 
                     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8){
                         imageView.removeFromSuperview()
+                        wself.viewModel.appendChoiceIntoChats(c)
                         wself.viewModel.nextChat(nextId: c.nextId)
                     }
                 }else{
                     self?.comboManager.endCombo()
+                    wself.viewModel.appendChoiceIntoChats(c)
                     wself.viewModel.nextChat(nextId: c.nextId)
                 }
-                wself.viewModel.appendChoiceIntoChats(c)
                 wself.tableView.reloadData()
                 wself.tableView.scrollToRow(at: IndexPath(row: wself.viewModel.chats.count-1, section: 0), at: .bottom, animated: true)
             }).disposed(by: disposeBag)
