@@ -43,12 +43,20 @@
                                     <constraint firstAttribute="height" constant="180" id="rgB-Pa-uyd"/>
                                 </constraints>
                             </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="通話中" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98c-F2-v1g">
+                                <rect key="frame" x="161" y="358.5" width="52" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="98c-F2-v1g" firstAttribute="top" secondItem="szB-AT-N93" secondAttribute="bottom" constant="250" id="4gN-DJ-YNa"/>
                             <constraint firstItem="Sje-Zc-td4" firstAttribute="top" secondItem="szB-AT-N93" secondAttribute="bottom" constant="50" id="4zT-bn-1wz"/>
                             <constraint firstItem="szB-AT-N93" firstAttribute="centerX" secondItem="U1h-w9-tH0" secondAttribute="centerX" id="Ix0-0T-3kg"/>
                             <constraint firstItem="llk-Vy-OmO" firstAttribute="centerX" secondItem="U1h-w9-tH0" secondAttribute="centerX" id="YH5-4S-ewL"/>
+                            <constraint firstItem="98c-F2-v1g" firstAttribute="centerX" secondItem="U1h-w9-tH0" secondAttribute="centerX" id="j0h-OW-McT"/>
                             <constraint firstItem="Sje-Zc-td4" firstAttribute="centerX" secondItem="U1h-w9-tH0" secondAttribute="centerX" id="lf0-m3-iuq"/>
                             <constraint firstItem="llk-Vy-OmO" firstAttribute="centerY" secondItem="U1h-w9-tH0" secondAttribute="centerY" constant="200" id="rEY-6S-xBp"/>
                             <constraint firstItem="szB-AT-N93" firstAttribute="top" secondItem="gfA-Dx-uOe" secondAttribute="top" constant="50" id="u5l-Aw-w2d"/>
@@ -57,6 +65,7 @@
                     </view>
                     <connections>
                         <outlet property="callResponse" destination="llk-Vy-OmO" id="06i-Nc-wuw"/>
+                        <outlet property="talkNow" destination="98c-F2-v1g" id="2gp-Et-Yq8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lAm-X8-YpK" userLabel="First Responder" sceneMemberID="firstResponder"/>

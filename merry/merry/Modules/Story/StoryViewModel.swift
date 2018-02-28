@@ -44,13 +44,4 @@ class StoryViewModel {
 			print(c.text)
 		}
     }
-    
-    func talkString(talkText: String)
-    {
-        let utterance = AVSpeechUtterance(string:talkText)
-        utterance.voice = AVSpeechSynthesisVoice(language:"ja-JP")
-        utterance.rate = 0.45
-        utterance.pitchMultiplier = 1.5
-        self.talker.speak(utterance)
-    }
 }
