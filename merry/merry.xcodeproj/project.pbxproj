@@ -34,6 +34,10 @@
 		6E7BF40720464FDD00F60826 /* ClearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BF40520464FDD00F60826 /* ClearViewController.swift */; };
 		D60301912045C0C300530BAD /* SupriseCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60301902045C0C300530BAD /* SupriseCameraViewController.swift */; };
 		D60301932045C18400530BAD /* SurpriseCamera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D60301922045C18400530BAD /* SurpriseCamera.storyboard */; };
+		D60301A12046548B00530BAD /* ComboManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60301A02046548B00530BAD /* ComboManager.swift */; };
+		D60301A32046595000530BAD /* shout.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D60301A22046595000530BAD /* shout.mp3 */; };
+		D60301A72046598B00530BAD /* ClearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60301A52046598B00530BAD /* ClearViewController.swift */; };
+		D60301A82046598B00530BAD /* Clear.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D60301A62046598B00530BAD /* Clear.storyboard */; };
 		D623E8F220457ABC001A47F5 /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D623E8F120457ABC001A47F5 /* CallViewController.swift */; };
 		D623E8F420457AC4001A47F5 /* Call.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D623E8F320457AC4001A47F5 /* Call.storyboard */; };
 		D623E8F72045A7E6001A47F5 /* ring.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D623E8F62045A7E6001A47F5 /* ring.mp3 */; };
@@ -71,6 +75,10 @@
 		B5FA9172C87F29DC27B1A6A5 /* Pods_merry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_merry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60301902045C0C300530BAD /* SupriseCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupriseCameraViewController.swift; sourceTree = "<group>"; };
 		D60301922045C18400530BAD /* SurpriseCamera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SurpriseCamera.storyboard; sourceTree = "<group>"; };
+		D60301A02046548B00530BAD /* ComboManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComboManager.swift; sourceTree = "<group>"; };
+		D60301A22046595000530BAD /* shout.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shout.mp3; sourceTree = "<group>"; };
+		D60301A52046598B00530BAD /* ClearViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearViewController.swift; sourceTree = "<group>"; };
+		D60301A62046598B00530BAD /* Clear.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Clear.storyboard; sourceTree = "<group>"; };
 		D623E8F120457ABC001A47F5 /* CallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
 		D623E8F320457AC4001A47F5 /* Call.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Call.storyboard; sourceTree = "<group>"; };
 		D623E8F62045A7E6001A47F5 /* ring.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ring.mp3; sourceTree = "<group>"; };
@@ -195,6 +203,7 @@
 			children = (
 				6E7BF3F720459C9C00F60826 /* Chat.swift */,
 				6E7BF3FC20459F3D00F60826 /* ChatManager.swift */,
+				D60301A02046548B00530BAD /* ComboManager.swift */,
 			);
 			path = Entites;
 			sourceTree = "<group>";
@@ -243,6 +252,15 @@
 			path = FrontCameraSurprise;
 			sourceTree = "<group>";
 		};
+		D60301A42046598B00530BAD /* Clear */ = {
+			isa = PBXGroup;
+			children = (
+				D60301A52046598B00530BAD /* ClearViewController.swift */,
+				D60301A62046598B00530BAD /* Clear.storyboard */,
+			);
+			path = Clear;
+			sourceTree = "<group>";
+		};
 		D623E8F020457AA9001A47F5 /* Call */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +273,7 @@
 		D623E8F52045A7CD001A47F5 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				D60301A22046595000530BAD /* shout.mp3 */,
 				D623E8FC2045B3ED001A47F5 /* why.mp3 */,
 				D623E8F62045A7E6001A47F5 /* ring.mp3 */,
 			);
@@ -323,10 +342,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D60301A32046595000530BAD /* shout.mp3 in Resources */,
 				6E7BF3D0204567C500F60826 /* LaunchScreen.storyboard in Resources */,
 				D60301932045C18400530BAD /* SurpriseCamera.storyboard in Resources */,
 				6E7BF3CD204567C500F60826 /* Assets.xcassets in Resources */,
 				D623E8F72045A7E6001A47F5 /* ring.mp3 in Resources */,
+				D60301A82046598B00530BAD /* Clear.storyboard in Resources */,
 				D623E8FD2045B3EE001A47F5 /* why.mp3 in Resources */,
 				D623E8F420457AC4001A47F5 /* Call.storyboard in Resources */,
 				6E7BF3ED2045722600F60826 /* YourChatViewCell.xib in Resources */,
@@ -411,10 +432,12 @@
 				D60301912045C0C300530BAD /* SupriseCameraViewController.swift in Sources */,
 				6E7BF3E12045700600F60826 /* StoryViewController.swift in Sources */,
 				6E7BF3C8204567C500F60826 /* StoryListViewController.swift in Sources */,
+				D60301A72046598B00530BAD /* ClearViewController.swift in Sources */,
 				6E7BF3FD20459F3D00F60826 /* ChatManager.swift in Sources */,
 				6E7BF3EC2045722600F60826 /* YourChatViewCell.swift in Sources */,
 				6E7BF3DA204568CE00F60826 /* StoryListViewModel.swift in Sources */,
 				6E7BF3C6204567C500F60826 /* AppDelegate.swift in Sources */,
+				D60301A12046548B00530BAD /* ComboManager.swift in Sources */,
 				6E7BF3F820459C9C00F60826 /* Chat.swift in Sources */,
 				6E7BF3EF2045738400F60826 /* MyBalloonView.swift in Sources */,
 				6E7BF40720464FDD00F60826 /* ClearViewController.swift in Sources */,

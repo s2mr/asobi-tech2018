@@ -30,6 +30,8 @@ class StoryFooterView: UIView {
     }
 
     private func loadXib() {
+        self.backgroundColor = .clear
+    
         let view = UINib(nibName: "StoryFooterView", bundle: nil).instantiate(withOwner: self, options: nil).first as! UIView
         view.frame = self.bounds
         self.addSubview(view)
