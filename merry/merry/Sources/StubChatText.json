@@ -28,9 +28,9 @@
 				 "type": "call",
 				 "choices": [
 							 {
-							 "score": 1,
-							 "text": "くさそう",
-							 "nextId": 23
+							 "score": 3,
+							 "text": "メリーさん！？",
+							 "nextId": 3
 							 },
 							 {
 							 "score": 2,
@@ -38,9 +38,9 @@
 							 "nextId": 3
 							 },
 							 {
-							 "score": 3,
-							 "text": "メリーさん！？",
-							 "nextId": 3
+							 "score": 1,
+							 "text": "くさそう",
+							 "nextId": 23
 							 }
 							 ]
 				 },
@@ -50,14 +50,14 @@
 				 "type": "call",
 				 "choices": [
 							 {
-							 "score": 1,
-							 "text": "捕まったの？",
-							 "nextId": 28
-							 },
-							 {
 							 "score": 2,
 							 "text": "どこのだろう？",
 							 "nextId": 13
+							 },
+							 {
+							 "score": 1,
+							 "text": "捕まったの？",
+							 "nextId": 28
 							 },
 							 {
 							 "score": 3,
@@ -72,14 +72,14 @@
 				 "type": "call",
 				 "choices": [
 							 {
-							 "score": 1,
-							 "text": "間違い電話ですよ",
-							 "nextId": 17
-							 },
-							 {
 							 "score": 2,
 							 "text": "近くの病院だ",
 							 "nextId": 5
+							 },
+							 {
+							 "score": 1,
+							 "text": "間違い電話ですよ",
+							 "nextId": 17
 							 },
 							 {
 							 "score": 3,
@@ -99,14 +99,14 @@
 							 "nextId": 14
 							 },
 							 {
-							 "score": 2,
-							 "text": "近づいてきてる",
-							 "nextId": 6
-							 },
-							 {
 							 "score": 3,
 							 "text": "今度何か奢ります",
 							 "nextId": 25
+							 },
+							 {
+							 "score": 2,
+							 "text": "近づいてきてる",
+							 "nextId": 6
 							 }
 							 ]
 				 },
@@ -116,9 +116,9 @@
 				 "type": "call",
 				 "choices": [
 							 {
-							 "score": 1,
-							 "text": "訪問販売はお断り",
-							 "nextId": 11
+							 "score": 3,
+							 "text": "来てくれたの！嬉しい！",
+							 "nextId": 26
 							 },
 							 {
 							 "score": 2,
@@ -126,9 +126,9 @@
 							 "nextId": 7
 							 },
 							 {
-							 "score": 3,
-							 "text": "来てくれたの！嬉しい！",
-							 "nextId": 26
+							 "score": 1,
+							 "text": "訪問販売はお断り",
+							 "nextId": 11
 							 }
 							 ]
 				 },
@@ -138,11 +138,6 @@
 				 "type": "call",
 				 "choices": [
 							 {
-							 "score": 1,
-							 "text": "失礼ですが、どちら様でしょうか？",
-							 "nextId": 27
-							 },
-							 {
 							 "score": 2,
 							 "text": "まさか家の中！",
 							 "nextId": 8
@@ -151,6 +146,11 @@
 							 "score": 3,
 							 "text": "おかえり",
 							 "nextId": 18
+							 },
+							 {
+							 "score": 1,
+							 "text": "失礼ですが、どちら様でしょうか？",
+							 "nextId": 27
 							 }
 							 ]
 				 },
@@ -160,9 +160,9 @@
 				 "type": "call",
 				 "choices": [
 							 {
-							 "score": 1,
-							 "text": "ワックスかけたばっかり(笑)",
-							 "nextId": 24
+							 "score": 3,
+							 "text": "まじで来たの！？",
+							 "nextId": 21
 							 },
 							 {
 							 "score": 2,
@@ -170,9 +170,9 @@
 							 "nextId": 9
 							 },
 							 {
-							 "score": 3,
-							 "text": "まじで来たの！？",
-							 "nextId": 21
+							 "score": 1,
+							 "text": "ワックスかけたばっかり(笑)",
+							 "nextId": 24
 							 }
 							 ]
 				 },
@@ -187,14 +187,14 @@
 							 "nextId": 10
 							 },
 							 {
-							 "score": 2,
-							 "text": "捨ててごめんなさい",
-							 "nextId": 10
-							 },
-							 {
 							 "score": 3,
 							 "text": "一緒にご飯いかない？",
 							 "nextId": 16
+							 },
+							 {
+							 "score": 2,
+							 "text": "捨ててごめんなさい",
+							 "nextId": 10
 							 }
 							 ]
 				 },
@@ -204,12 +204,12 @@
 				 "type": "fin",
 				 "choices": [
 							 {
-							 "score": 1,
+							 "score": 2,
 							 "text": "最初からやり直す",
 							 "nextId": 1
 							 },
 							 {
-							 "score": 2,
+							 "score": 1,
 							 "text": "最初からやり直す",
 							 "nextId": 1
 							 },
@@ -226,13 +226,13 @@
 				 "type": "text",
 				 "choices": [
 							 {
-							 "score": 1,
-							 "text": "不法侵入です",
+							 "score": 2,
+							 "text": "鍵をかけるのは当たり前です",
 							 "nextId": 7
 							 },
 							 {
-							 "score": 2,
-							 "text": "鍵をかけるのは当たり前です",
+							 "score": 1,
+							 "text": "不法侵入です",
 							 "nextId": 7
 							 },
 							 {
@@ -253,13 +253,13 @@
 							 "nextId": 4
 							 },
 							 {
-							 "score": 2,
-							 "text": "ごめんお待たせ",
+							 "score": 3,
+							 "text": "自分も今来たところ",
 							 "nextId": 4
 							 },
 							 {
-							 "score": 3,
-							 "text": "自分も今来たところ",
+							 "score": 2,
+							 "text": "ごめんお待たせ",
 							 "nextId": 4
 							 }
 							 ]
@@ -275,14 +275,14 @@
 							 "nextId": 4
 							 },
 							 {
-							 "score": 2,
-							 "text": "どこに行くの？",
-							 "nextId": 4
-							 },
-							 {
 							 "score": 3,
 							 "text": "さっそく水族館に行こう！",
 							 "nextId": 15
+							 },
+							 {
+							 "score": 2,
+							 "text": "どこに行くの？",
+							 "nextId": 4
 							 }
 							 ]
 				 },
@@ -292,8 +292,8 @@
 				 "type": "text",
 				 "choices": [
 							 {
-							 "score": 1,
-							 "text": "本当に記憶がない",
+							 "score": 3,
+							 "text": "ごめん嘘",
 							 "nextId": 6
 							 },
 							 {
@@ -302,8 +302,8 @@
 							 "nextId": 6
 							 },
 							 {
-							 "score": 3,
-							 "text": "ごめん嘘",
+							 "score": 1,
+							 "text": "本当に記憶がない",
 							 "nextId": 6
 							 }
 							 ]
@@ -319,13 +319,13 @@
 							 "nextId": 1
 							 },
 							 {
-							 "score": 2,
-							 "text": "よかったですねー",
+							 "score": 10,
+							 "text": "嬉しいね",
 							 "nextId": 1
 							 },
 							 {
-							 "score": 10,
-							 "text": "嬉しいね",
+							 "score": 2,
+							 "text": "よかったですねー",
 							 "nextId": 1
 							 }
 							 ]
@@ -341,14 +341,14 @@
 							 "nextId": 19
 							 },
 							 {
-							 "score": 2,
-							 "text": "イタリアン",
-							 "nextId": 19
-							 },
-							 {
 							 "score": 3,
 							 "text": "有名料理店",
 							 "nextId": 29
+							 },
+							 {
+							 "score": 2,
+							 "text": "イタリアン",
+							 "nextId": 19
 							 }
 							 ]
 				 },
@@ -358,8 +358,8 @@
 				 "type": "text",
 				 "choices": [
 							 {
-							 "score": 1,
-							 "text": "あのボロ人形か",
+							 "score": 3,
+							 "text": "人形のメリーさん？",
 							 "nextId": 5
 							 },
 							 {
@@ -368,8 +368,8 @@
 							 "nextId": 5
 							 },
 							 {
-							 "score": 3,
-							 "text": "人形のメリーさん？",
+							 "score": 1,
+							 "text": "あのボロ人形か",
 							 "nextId": 5
 							 }
 							 ]
@@ -380,13 +380,13 @@
 				 "type": "text",
 				 "choices": [
 							 {
-							 "score": 1,
-							 "text": "回れ右して帰って",
+							 "score": 2,
+							 "text": "通報します",
 							 "nextId": 8
 							 },
 							 {
-							 "score": 2,
-							 "text": "通報します",
+							 "score": 1,
+							 "text": "回れ右して帰って",
 							 "nextId": 8
 							 },
 							 {
@@ -407,14 +407,14 @@
 							 "nextId": 10
 							 },
 							 {
-							 "score": 2,
-							 "text": "どこがだめだった？",
-							 "nextId": 10
-							 },
-							 {
 							 "score": 3,
 							 "text": "ごめんなさい",
 							 "nextId": 22
+							 },
+							 {
+							 "score": 2,
+							 "text": "どこがだめだった？",
+							 "nextId": 10
 							 }
 							 ]
 				 },
@@ -424,8 +424,8 @@
 				 "type": "text",
 				 "choices": [
 							 {
-							 "score": 1,
-							 "text": "違わない",
+							 "score": 3,
+							 "text": "他に何か用事？",
 							 "nextId": 6
 							 },
 							 {
@@ -434,8 +434,8 @@
 							 "nextId": 6
 							 },
 							 {
-							 "score": 3,
-							 "text": "他に何か用事？",
+							 "score": 1,
+							 "text": "違わない",
 							 "nextId": 6
 							 }
 							 ]
@@ -451,13 +451,13 @@
 							 "nextId": 9
 							 },
 							 {
-							 "score": 1,
-							 "text": "帰って",
+							 "score": 3,
+							 "text": "びっくり",
 							 "nextId": 9
 							 },
 							 {
-							 "score": 3,
-							 "text": "びっくり",
+							 "score": 1,
+							 "text": "帰って",
 							 "nextId": 9
 							 }
 							 ]
@@ -468,8 +468,8 @@
 				 "type": "text",
 				 "choices": [
 							 {
-							 "score": 1,
-							 "text": "謝ってるんだから許せよ",
+							 "score": 3,
+							 "text": "高級プリンおごるから",
 							 "nextId": 10
 							 },
 							 {
@@ -478,8 +478,8 @@
 							 "nextId": 10
 							 },
 							 {
-							 "score": 3,
-							 "text": "高級プリンおごるから",
+							 "score": 1,
+							 "text": "謝ってるんだから許せよ",
 							 "nextId": 10
 							 }
 							 ]
@@ -495,13 +495,13 @@
 							 "nextId": 3
 							 },
 							 {
-							 "score": 2,
-							 "text": "香水してるんだ",
+							 "score": 3,
+							 "text": "シャワー浴びてきます",
 							 "nextId": 3
 							 },
 							 {
-							 "score": 3,
-							 "text": "シャワー浴びてきます",
+							 "score": 2,
+							 "text": "香水してるんだ",
 							 "nextId": 3
 							 }
 							 ]
@@ -556,8 +556,8 @@
 				 "type": "text",
 				 "choices": [
 							 {
-							 "score": 1,
-							 "text": "そんなわけあるか！帰れ",
+							 "score": 3,
+							 "text": "ゆっくりしていってね",
 							 "nextId": 7
 							 },
 							 {
@@ -566,8 +566,8 @@
 							 "nextId": 7
 							 },
 							 {
-							 "score": 3,
-							 "text": "ゆっくりしていってね",
+							 "score": 1,
+							 "text": "そんなわけあるか！帰れ",
 							 "nextId": 7
 							 }
 							 ]
@@ -583,13 +583,13 @@
 							 "nextId": 8
 							 },
 							 {
-							 "score": 1,
-							 "text": "なんで？",
+							 "score": 2,
+							 "text": "そうですとも",
 							 "nextId": 8
 							 },
 							 {
-							 "score": 2,
-							 "text": "そうですとも",
+							 "score": 1,
+							 "text": "なんで？",
 							 "nextId": 8
 							 }
 							 ]
@@ -644,9 +644,9 @@
 				 "type": "text",
 				 "choices": [
 							 {
-							 "score": 1,
-							 "text": "あっ財布忘れた",
-							 "nextId": 31
+							 "score": 3,
+							 "text": "自分が払うよ",
+							 "nextId": 33
 							 },
 							 {
 							 "score": 2,
@@ -654,9 +654,9 @@
 							 "nextId": 34
 							 },
 							 {
-							 "score": 3,
-							 "text": "自分が払うよ",
-							 "nextId": 33
+							 "score": 1,
+							 "text": "あっ財布忘れた",
+							 "nextId": 31
 							 }
 							 ]
 				 },
@@ -666,9 +666,9 @@
 				 "type": "text",
 				 "choices": [
 							 {
-							 "score": 1,
-							 "text": "今度なにか奢るね",
-							 "nextId": 32
+							 "score": 3,
+							 "text": "嘘です、自分が払うよ",
+							 "nextId": 33
 							 },
 							 {
 							 "score": 2,
@@ -676,9 +676,9 @@
 							 "nextId": 34
 							 },
 							 {
-							 "score": 3,
-							 "text": "嘘です、自分が払うよ",
-							 "nextId": 33
+							 "score": 1,
+							 "text": "今度なにか奢るね",
+							 "nextId": 32
 							 }
 							 ]
 				 },
@@ -693,14 +693,14 @@
 							 "nextId": 34
 							 },
 							 {
-							 "score": 2,
-							 "text": "100年後に奢るね",
-							 "nextId": 34
-							 },
-							 {
 							 "score": 3,
 							 "text": "期待してて",
 							 "nextId": 33
+							 },
+							 {
+							 "score": 2,
+							 "text": "100年後に奢るね",
+							 "nextId": 34
 							 }
 							 ]
 				 },
@@ -732,9 +732,9 @@
 				 "type": "text",
 				 "choices": [
 							 {
-							 "score": 1,
-							 "text": "ははは",
-							 "nextId": 19
+							 "score": 3,
+							 "text": "ごめんね",
+							 "nextId": 15
 							 },
 							 {
 							 "score": 2,
@@ -742,9 +742,9 @@
 							 "nextId": 19
 							 },
 							 {
-							 "score": 3,
-							 "text": "ごめんね",
-							 "nextId": 15
+							 "score": 1,
+							 "text": "ははは",
+							 "nextId": 19
 							 }
 							 ]
 				 }
