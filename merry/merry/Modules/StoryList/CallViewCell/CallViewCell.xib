@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="125" id="KGk-i7-Jjw" customClass="CallViewCell" customModule="merry" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="460" height="125"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="460" height="124.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2cm-du-LNQ">
+                        <rect key="frame" x="20" y="11" width="100" height="100"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="着信あり" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itl-6Z-OVw">
+                                <rect key="frame" x="25.5" y="66" width="49.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="call_icon_0" translatesAutoresizingMaskIntoConstraints="NO" id="Fr6-b0-yPM">
+                                <rect key="frame" x="25" y="8" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="aqg-xi-hlr"/>
+                                    <constraint firstAttribute="height" constant="50" id="zHH-0n-PIO"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="itl-6Z-OVw" firstAttribute="top" secondItem="Fr6-b0-yPM" secondAttribute="bottom" constant="8" id="2W1-Um-1JG"/>
+                            <constraint firstItem="Fr6-b0-yPM" firstAttribute="top" secondItem="2cm-du-LNQ" secondAttribute="top" constant="8" id="6xR-5Y-x3c"/>
+                            <constraint firstItem="itl-6Z-OVw" firstAttribute="centerX" secondItem="2cm-du-LNQ" secondAttribute="centerX" id="MxO-V9-yyt"/>
+                            <constraint firstAttribute="height" constant="100" id="QKt-Ch-D1q"/>
+                            <constraint firstAttribute="width" constant="100" id="WOd-0M-Xqn"/>
+                            <constraint firstItem="Fr6-b0-yPM" firstAttribute="centerX" secondItem="2cm-du-LNQ" secondAttribute="centerX" id="cbO-Gk-7dD"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="2cm-du-LNQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="6F7-Gl-Fjj"/>
+                    <constraint firstAttribute="bottom" secondItem="2cm-du-LNQ" secondAttribute="bottom" constant="13.5" id="d63-bK-HvH"/>
+                    <constraint firstItem="2cm-du-LNQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="sAV-1D-k08"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="callIcon" destination="Fr6-b0-yPM" id="bxK-fu-zUb"/>
+                <outlet property="callText" destination="itl-6Z-OVw" id="xRf-Yl-mPb"/>
+            </connections>
+            <point key="canvasLocation" x="104" y="41.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="call_icon_0" width="195" height="196"/>
+    </resources>
+</document>
