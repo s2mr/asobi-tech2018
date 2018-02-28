@@ -20,6 +20,8 @@ class StoryViewController: UIViewController {
     private let viewModel = StoryViewModel()
     private let disposeBag = DisposeBag()
 
+    var comboManager = ComboManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -38,6 +40,7 @@ class StoryViewController: UIViewController {
 }
 
 extension StoryViewController {
+    
     private func setupUI() {
         footerView.alpha = 0.0
 
@@ -70,6 +73,9 @@ extension StoryViewController {
             .subscribe(onNext: { [weak self] (str) in
                 self?.footerView.button3.setTitle(str, for: .normal)
             }).disposed(by: disposeBag)
+        
+        let screenWidth = UIScreen.main.bounds.size.width
+        let screenHeight = UIScreen.main.bounds.size.height
 
         footerView.button1.rx.tap.withLatestFrom(viewModel.choice1.asObservable())
             .subscribe(onNext: { [weak self] (c) in
@@ -78,8 +84,22 @@ extension StoryViewController {
                 wself.viewModel.nextChat(nextId: c.nextId)
                 wself.tableView.reloadData()
                 wself.tableView.scrollToRow(at: IndexPath(row: wself.viewModel.chats.count-1, section: 0), at: .bottom, animated: true)
+                
+                if c.score >= 3{
+                    var combo = self?.comboManager.getNextComboImage()
+                    let imageView = UIImageView(frame: CGRect(x: (screenWidth / 2.0) - 100, y: 300, width: 200, height: 100))
+                        imageView.image = combo
+                    
+                    self?.view.addSubview(imageView)
+                    
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8){
+                        imageView.removeFromSuperview()
+                    }
+                }else{
+                    self?.comboManager.endCombo()
+                }
             }).disposed(by: disposeBag)
-
+        
         footerView.button2.rx.tap.withLatestFrom(viewModel.choice2.asObservable())
             .subscribe(onNext: { [weak self] (c) in
                 guard let wself = self else { return }
@@ -87,6 +107,20 @@ extension StoryViewController {
                 wself.viewModel.nextChat(nextId: c.nextId)
                 wself.tableView.reloadData()
                 wself.tableView.scrollToRow(at: IndexPath(row: wself.viewModel.chats.count-1, section: 0), at: .bottom, animated: true)
+                
+                if c.score >= 3{
+                    var combo = self?.comboManager.getNextComboImage()
+                    let imageView = UIImageView(frame: CGRect(x: (screenWidth / 2.0) - 100, y: 300, width: 200, height: 100))
+                    imageView.image = combo
+                    
+                    self?.view.addSubview(imageView)
+                    
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8){
+                        imageView.removeFromSuperview()
+                    }
+                }else{
+                    self?.comboManager.endCombo()
+                }
             }).disposed(by: disposeBag)
 
         footerView.button3.rx.tap.withLatestFrom(viewModel.choice3.asObservable())
@@ -96,6 +130,20 @@ extension StoryViewController {
                 wself.viewModel.nextChat(nextId: c.nextId)
                 wself.tableView.reloadData()
                 wself.tableView.scrollToRow(at: IndexPath(row: wself.viewModel.chats.count-1, section: 0), at: .bottom, animated: true)
+                
+                if c.score >= 3{
+                    var combo = self?.comboManager.getNextComboImage()
+                    let imageView = UIImageView(frame: CGRect(x: (screenWidth / 2.0) - 100, y: 300, width: 200, height: 100))
+                    imageView.image = combo
+                    
+                    self?.view.addSubview(imageView)
+                    
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8){
+                        imageView.removeFromSuperview()
+                    }
+                }else{
+                    self?.comboManager.endCombo()
+                }
             }).disposed(by: disposeBag)
 
         viewModel.shouldShowFooter.subscribe(onNext: { [weak self] (should) in
