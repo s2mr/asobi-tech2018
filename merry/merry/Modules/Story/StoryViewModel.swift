@@ -16,14 +16,23 @@ class StoryViewModel {
 
     var chats: [Chat] = [] // for present
 
-    var choices: PublishSubject<[Chat.Choice]> = PublishSubject()
+    var choice1: PublishSubject<Chat.Choice> = PublishSubject()
+    var choice2: PublishSubject<Chat.Choice> = PublishSubject()
+    var choice3: PublishSubject<Chat.Choice> = PublishSubject()
 
     private let chatManager = ChatManager()
 
     func nextChat() {
         guard let c = chatManager.getNextChat() else { return }
         self.chats.append(c)
-        self.choices.onNext(c.choices)
+
+        if c.choices.count >= 3 {
+            self.choice1.onNext(c.choices[0])
+            self.choice2.onNext(c.choices[1])
+            self.choice3.onNext(c.choices[2])
+        }
+
+
 		
 		// audio
 		if c.type == "call" {

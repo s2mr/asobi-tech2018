@@ -47,6 +47,7 @@
                         <viewLayoutGuide key="safeArea" id="GJF-aV-v70"/>
                     </view>
                     <connections>
+                        <outlet property="footerView" destination="70r-3G-zzq" id="cqt-TZ-k2j"/>
                         <outlet property="tableView" destination="Gbv-p2-FWy" id="j8h-wd-3S9"/>
                     </connections>
                 </viewController>

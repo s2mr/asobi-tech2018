@@ -9,11 +9,12 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class StoryViewController: UIViewController {
 
-
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var footerView: StoryFooterView!
 
     private let viewModel = StoryViewModel()
     private let disposeBag = DisposeBag()
@@ -21,6 +22,7 @@ class StoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        subscribe()
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,7 +42,7 @@ class StoryViewController: UIViewController {
 }
 
 extension StoryViewController {
-    func setupUI() {
+    private func setupUI() {
         tableView.backgroundColor = .black
         tableView.separatorColor = UIColor.clear
         tableView.estimatedRowHeight = 10000
@@ -54,6 +56,21 @@ extension StoryViewController {
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.backgroundTapped))
         tapRecognizer.cancelsTouchesInView = false // TableViewへタップイベントを流す
         self.tableView.addGestureRecognizer(tapRecognizer)
+    }
+
+    private func subscribe() {
+        viewModel.choice1.map { $0.text }
+            .subscribe(onNext: { [weak self] (str) in
+                self?.footerView.button1.setTitle(str, for: .normal)
+            }).disposed(by: disposeBag)
+        viewModel.choice2.map { $0.text }
+            .subscribe(onNext: { [weak self] (str) in
+                self?.footerView.button2.setTitle(str, for: .normal)
+            }).disposed(by: disposeBag)
+        viewModel.choice3.map { $0.text }
+            .subscribe(onNext: { [weak self] (str) in
+                self?.footerView.button3.setTitle(str, for: .normal)
+            }).disposed(by: disposeBag)
     }
 
     @objc func backgroundTapped() {
