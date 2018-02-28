@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UqH-so-xx4">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Clear View Controller-->
+        <scene sceneID="VHj-94-rqd">
+            <objects>
+                <viewController id="UqH-so-xx4" customClass="ClearViewController" customModule="merry" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bUt-ht-dv9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merryを欺いた" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmx-NG-rXy">
+                                <rect key="frame" x="96" y="120" width="184" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2J-hN-g8w">
+                                <rect key="frame" x="162" y="203.5" width="50.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rak-c9-fO9">
+                                <rect key="frame" x="126" y="537" width="123" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9Z-l9-lxi">
+                                        <rect key="frame" x="0.0" y="0.0" width="123" height="30"/>
+                                        <state key="normal" title="ストーリーを選ぶ"/>
+                                        <connections>
+                                            <action selector="ButtonTouchUp:" destination="UqH-so-xx4" eventType="touchUpInside" id="GeY-re-nJ4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QjF-nM-JZx" firstAttribute="bottom" secondItem="rak-c9-fO9" secondAttribute="bottom" constant="100" id="0Zo-Jj-I8I"/>
+                            <constraint firstItem="e2J-hN-g8w" firstAttribute="top" secondItem="cmx-NG-rXy" secondAttribute="bottom" constant="50" id="18P-X6-avH"/>
+                            <constraint firstItem="cmx-NG-rXy" firstAttribute="centerX" secondItem="bUt-ht-dv9" secondAttribute="centerX" id="Aip-Uu-aRK"/>
+                            <constraint firstItem="cmx-NG-rXy" firstAttribute="top" secondItem="QjF-nM-JZx" secondAttribute="top" constant="100" id="E2W-zH-kIz"/>
+                            <constraint firstItem="e2J-hN-g8w" firstAttribute="centerX" secondItem="bUt-ht-dv9" secondAttribute="centerX" id="UyW-1X-ZRH"/>
+                            <constraint firstItem="rak-c9-fO9" firstAttribute="centerX" secondItem="bUt-ht-dv9" secondAttribute="centerX" id="b9e-Bo-9dK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QjF-nM-JZx"/>
+                    </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="e2J-hN-g8w" id="IkC-cY-ffj"/>
+                        <outlet property="storySelectButton" destination="u9Z-l9-lxi" id="bsB-sr-bKV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YhC-W3-OAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="152.80000000000001" y="-159.67016491754123"/>
+        </scene>
+    </scenes>
+</document>
