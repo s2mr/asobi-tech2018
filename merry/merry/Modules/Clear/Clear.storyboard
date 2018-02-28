@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UqH-so-xx4">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,44 +15,53 @@
             <objects>
                 <viewController id="UqH-so-xx4" customClass="ClearViewController" customModule="merry" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bUt-ht-dv9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merryを欺いた" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmx-NG-rXy">
-                                <rect key="frame" x="96" y="120" width="184" height="33.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="clear_bg" translatesAutoresizingMaskIntoConstraints="NO" id="rcn-Pr-16k">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2J-hN-g8w">
-                                <rect key="frame" x="162" y="203.5" width="50.5" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="122" y="207" width="76.5" height="33.5"/>
+                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rak-c9-fO9">
-                                <rect key="frame" x="126" y="537" width="123" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9Z-l9-lxi">
-                                        <rect key="frame" x="0.0" y="0.0" width="123" height="30"/>
-                                        <state key="normal" title="ストーリーを選ぶ"/>
-                                        <connections>
-                                            <action selector="ButtonTouchUp:" destination="UqH-so-xx4" eventType="touchUpInside" id="GeY-re-nJ4"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9Z-l9-lxi">
+                                <rect key="frame" x="75" y="423" width="170" height="45"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="kh3-2Y-myk"/>
+                                    <constraint firstAttribute="height" constant="45" id="y2q-fI-UAD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="ストーリーを選ぶ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="ButtonTouchUp:" destination="UqH-so-xx4" eventType="touchUpInside" id="GeY-re-nJ4"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clear_text" translatesAutoresizingMaskIntoConstraints="NO" id="YTu-Fr-SGi">
+                                <rect key="frame" x="30" y="50" width="260" height="107"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="867-c7-tcp"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="QjF-nM-JZx" firstAttribute="bottom" secondItem="rak-c9-fO9" secondAttribute="bottom" constant="100" id="0Zo-Jj-I8I"/>
-                            <constraint firstItem="e2J-hN-g8w" firstAttribute="top" secondItem="cmx-NG-rXy" secondAttribute="bottom" constant="50" id="18P-X6-avH"/>
-                            <constraint firstItem="cmx-NG-rXy" firstAttribute="centerX" secondItem="bUt-ht-dv9" secondAttribute="centerX" id="Aip-Uu-aRK"/>
-                            <constraint firstItem="cmx-NG-rXy" firstAttribute="top" secondItem="QjF-nM-JZx" secondAttribute="top" constant="100" id="E2W-zH-kIz"/>
-                            <constraint firstItem="e2J-hN-g8w" firstAttribute="centerX" secondItem="bUt-ht-dv9" secondAttribute="centerX" id="UyW-1X-ZRH"/>
-                            <constraint firstItem="rak-c9-fO9" firstAttribute="centerX" secondItem="bUt-ht-dv9" secondAttribute="centerX" id="b9e-Bo-9dK"/>
+                            <constraint firstItem="rcn-Pr-16k" firstAttribute="centerY" secondItem="bUt-ht-dv9" secondAttribute="centerY" id="Mud-dc-gDv"/>
+                            <constraint firstItem="e2J-hN-g8w" firstAttribute="centerX" secondItem="bUt-ht-dv9" secondAttribute="centerX" id="att-WX-S1X"/>
+                            <constraint firstItem="e2J-hN-g8w" firstAttribute="top" secondItem="YTu-Fr-SGi" secondAttribute="bottom" constant="50" id="hQP-2Q-XpS"/>
+                            <constraint firstItem="YTu-Fr-SGi" firstAttribute="top" secondItem="jMY-C4-txZ" secondAttribute="top" constant="30" id="iQf-AG-fjf"/>
+                            <constraint firstItem="jMY-C4-txZ" firstAttribute="bottom" secondItem="u9Z-l9-lxi" secondAttribute="bottom" constant="100" id="l0e-U9-sAV"/>
+                            <constraint firstItem="u9Z-l9-lxi" firstAttribute="centerX" secondItem="bUt-ht-dv9" secondAttribute="centerX" id="s65-wC-BC6"/>
+                            <constraint firstItem="YTu-Fr-SGi" firstAttribute="centerX" secondItem="bUt-ht-dv9" secondAttribute="centerX" id="vOV-a5-tQ1"/>
+                            <constraint firstItem="rcn-Pr-16k" firstAttribute="centerX" secondItem="bUt-ht-dv9" secondAttribute="centerX" id="wFs-Tp-dZK"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="QjF-nM-JZx"/>
+                        <viewLayoutGuide key="safeArea" id="jMY-C4-txZ"/>
                     </view>
                     <connections>
                         <outlet property="scoreLabel" destination="e2J-hN-g8w" id="IkC-cY-ffj"/>
@@ -61,7 +70,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YhC-W3-OAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="152.80000000000001" y="-159.67016491754123"/>
+            <point key="canvasLocation" x="151.875" y="-160.56338028169014"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="clear_bg" width="750" height="1334"/>
+        <image name="clear_text" width="370" height="107"/>
+    </resources>
 </document>

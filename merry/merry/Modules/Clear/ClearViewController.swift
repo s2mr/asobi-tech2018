@@ -18,7 +18,8 @@ class ClearViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        storySelectButton.layer.cornerRadius = 8
+        storySelectButton.layer.masksToBounds = true
         // Do any additional setup after loading the view.
     }
     
