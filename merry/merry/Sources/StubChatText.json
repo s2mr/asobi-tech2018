@@ -30,7 +30,7 @@
 							 {
 							 "score": 1,
 							 "text": "くさそう",
-							 "nextId": 3
+							 "nextId": 23
 							 },
 							 {
 							 "score": 2,
@@ -52,17 +52,17 @@
 							 {
 							 "score": 1,
 							 "text": "捕まったの？",
-							 "nextId": 4
+							 "nextId": 28
 							 },
 							 {
 							 "score": 2,
 							 "text": "どこのだろう？",
-							 "nextId": 4
+							 "nextId": 13
 							 },
 							 {
 							 "score": 3,
 							 "text": "何かあったの",
-							 "nextId": 4
+							 "nextId": 12
 							 }
 							 ]
 				 },
@@ -74,7 +74,7 @@
 							 {
 							 "score": 1,
 							 "text": "間違い電話ですよ",
-							 "nextId": 5
+							 "nextId": 17
 							 },
 							 {
 							 "score": 2,
@@ -84,7 +84,7 @@
 							 {
 							 "score": 3,
 							 "text": "大丈夫？怪我したの？",
-							 "nextId": 5
+							 "nextId": 20
 							 }
 							 ]
 				 },
@@ -96,7 +96,7 @@
 							 {
 							 "score": 1,
 							 "text": "すみません。人違いです",
-							 "nextId": 6
+							 "nextId": 14
 							 },
 							 {
 							 "score": 2,
@@ -106,7 +106,7 @@
 							 {
 							 "score": 3,
 							 "text": "今度何か奢ります",
-							 "nextId": 6
+							 "nextId": 25
 							 }
 							 ]
 				 },
@@ -117,8 +117,8 @@
 				 "choices": [
 							 {
 							 "score": 1,
-							 "text": "次の交差点右に曲がって",
-							 "nextId": 7
+							 "text": "訪問販売はお断り",
+							 "nextId": 11
 							 },
 							 {
 							 "score": 2,
@@ -128,7 +128,7 @@
 							 {
 							 "score": 3,
 							 "text": "来てくれたの！嬉しい！",
-							 "nextId": 7
+							 "nextId": 26
 							 }
 							 ]
 				 },
@@ -139,18 +139,18 @@
 				 "choices": [
 							 {
 							 "score": 1,
-							 "text": "すみません。人違いです",
-							 "nextId": 8
+							 "text": "失礼ですが、どちら様でしょうか？",
+							 "nextId": 27
 							 },
 							 {
 							 "score": 2,
-							 "text": "家の中にきた",
+							 "text": "まさか家の中！",
 							 "nextId": 8
 							 },
 							 {
 							 "score": 3,
 							 "text": "おかえり",
-							 "nextId": 8
+							 "nextId": 18
 							 }
 							 ]
 				 },
@@ -161,18 +161,18 @@
 				 "choices": [
 							 {
 							 "score": 1,
-							 "text": "間違い電話ですよ",
-							 "nextId": 9
+							 "text": "ワックスかけたばっかり(笑)",
+							 "nextId": 24
 							 },
 							 {
 							 "score": 2,
-							 "text": "・・・",
+							 "text": "・・・どうしよ",
 							 "nextId": 9
 							 },
 							 {
 							 "score": 3,
 							 "text": "まじで来たの！？",
-							 "nextId": 9
+							 "nextId": 21
 							 }
 							 ]
 				 },
@@ -183,7 +183,7 @@
 				 "choices": [
 							 {
 							 "score": 1,
-							 "text": "一緒にご飯いかない？",
+							 "text": "は？意味わからん",
 							 "nextId": 10
 							 },
 							 {
@@ -194,7 +194,7 @@
 							 {
 							 "score": 3,
 							 "text": "一緒にご飯いかない？",
-							 "nextId": 10
+							 "nextId": 16
 							 }
 							 ]
 				 },
@@ -202,7 +202,551 @@
 				 "id": 10,
 				 "text": "私、メリーさん。今、あなたの後ろにいるの",
 				 "type": "fin",
-				 "choices": []
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "最初からやり直す",
+							 "nextId": 1
+							 },
+							 {
+							 "score": 2,
+							 "text": "最初からやり直す",
+							 "nextId": 1
+							 },
+							 {
+							 "score": 3,
+							 "text": "最初からやり直す",
+							 "nextId": 1
+							 }
+							 ]
+				 },
+				 {
+				 "id": 11,
+				 "text": "家に鍵かけないでよ",
+				 "type": "text",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "不法侵入です",
+							 "nextId": 7
+							 },
+							 {
+							 "score": 2,
+							 "text": "鍵をかけるのは当たり前です",
+							 "nextId": 7
+							 },
+							 {
+							 "score": 3,
+							 "text": "開けとくね",
+							 "nextId": 7
+							 }
+							 ]
+				 },
+				 {
+				 "id": 12,
+				 "text": "私、メリーさん。今、公園の噴水の前にいるの",
+				 "type": "call",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "遅い！",
+							 "nextId": 4
+							 },
+							 {
+							 "score": 2,
+							 "text": "ごめんお待たせ",
+							 "nextId": 4
+							 },
+							 {
+							 "score": 3,
+							 "text": "自分も今来たところ",
+							 "nextId": 4
+							 }
+							 ]
+				 },
+				 {
+				 "id": 13,
+				 "text": "私、メリーさん。今、あなたの家の最寄駅にいるの",
+				 "type": "call",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "そこどこの駅？間違えてるよ",
+							 "nextId": 4
+							 },
+							 {
+							 "score": 2,
+							 "text": "どこに行くの？",
+							 "nextId": 4
+							 },
+							 {
+							 "score": 3,
+							 "text": "さっそく水族館に行こう！",
+							 "nextId": 15
+							 }
+							 ]
+				 },
+				 {
+				 "id": 14,
+				 "text": "人違いじゃないよ！",
+				 "type": "text",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "本当に記憶がない",
+							 "nextId": 6
+							 },
+							 {
+							 "score": 2,
+							 "text": "そうですか",
+							 "nextId": 6
+							 },
+							 {
+							 "score": 3,
+							 "text": "ごめん嘘",
+							 "nextId": 6
+							 }
+							 ]
+				 },
+				 {
+				 "id": 15,
+				 "text": "私、メリーさん。今、幸せです",
+				 "type": "call",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "そうですか",
+							 "nextId": 1
+							 },
+							 {
+							 "score": 2,
+							 "text": "よかったですねー",
+							 "nextId": 1
+							 },
+							 {
+							 "score": 10,
+							 "text": "嬉しいね",
+							 "nextId": 1
+							 }
+							 ]
+				 },
+				 {
+				 "id": 16,
+				 "text": "どこのレストランに行く？",
+				 "type": "text",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "近くのラーメン店にいこう",
+							 "nextId": 19
+							 },
+							 {
+							 "score": 2,
+							 "text": "イタリアン",
+							 "nextId": 19
+							 },
+							 {
+							 "score": 3,
+							 "text": "有名料理店",
+							 "nextId": 29
+							 }
+							 ]
+				 },
+				 {
+				 "id": 17,
+				 "text": "間違いじゃないです",
+				 "type": "text",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "あのボロ人形か",
+							 "nextId": 5
+							 },
+							 {
+							 "score": 2,
+							 "text": "やっぱり知らない",
+							 "nextId": 5
+							 },
+							 {
+							 "score": 3,
+							 "text": "人形のメリーさん？",
+							 "nextId": 5
+							 }
+							 ]
+				 },
+				 {
+				 "id": 18,
+				 "text": "ただいま",
+				 "type": "text",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "回れ右して帰って",
+							 "nextId": 8
+							 },
+							 {
+							 "score": 2,
+							 "text": "通報します",
+							 "nextId": 8
+							 },
+							 {
+							 "score": 3,
+							 "text": "今日は早かったね",
+							 "nextId": 8
+							 }
+							 ]
+				 },
+				 {
+				 "id": 19,
+				 "text": "つまらない",
+				 "type": "text",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "なんで？",
+							 "nextId": 10
+							 },
+							 {
+							 "score": 2,
+							 "text": "どこがだめだった？",
+							 "nextId": 10
+							 },
+							 {
+							 "score": 3,
+							 "text": "ごめんなさい",
+							 "nextId": 22
+							 }
+							 ]
+				 },
+				 {
+				 "id": 20,
+				 "text": "違う",
+				 "type": "text",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "違わない",
+							 "nextId": 6
+							 },
+							 {
+							 "score": 2,
+							 "text": "じゃあ何？",
+							 "nextId": 6
+							 },
+							 {
+							 "score": 3,
+							 "text": "他に何か用事？",
+							 "nextId": 6
+							 }
+							 ]
+				 },
+				 {
+				 "id": 21,
+				 "text": "そうよ",
+				 "type": "text",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "土足で入るな",
+							 "nextId": 9
+							 },
+							 {
+							 "score": 1,
+							 "text": "帰って",
+							 "nextId": 9
+							 },
+							 {
+							 "score": 3,
+							 "text": "びっくり",
+							 "nextId": 9
+							 }
+							 ]
+				 },
+				 {
+				 "id": 22,
+				 "text": "もう遅い",
+				 "type": "text",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "謝ってるんだから許せよ",
+							 "nextId": 10
+							 },
+							 {
+							 "score": 2,
+							 "text": "本当に申し訳ありませんでした",
+							 "nextId": 10
+							 },
+							 {
+							 "score": 3,
+							 "text": "高級プリンおごるから",
+							 "nextId": 10
+							 }
+							 ]
+				 },
+				 {
+				 "id": 23,
+				 "text": "あなたの方がくさい",
+				 "type": "text",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "なんでだよ",
+							 "nextId": 3
+							 },
+							 {
+							 "score": 2,
+							 "text": "香水してるんだ",
+							 "nextId": 3
+							 },
+							 {
+							 "score": 3,
+							 "text": "シャワー浴びてきます",
+							 "nextId": 3
+							 }
+							 ]
+				 },
+				 {
+				 "id": 24,
+				 "text": "最悪",
+				 "type": "text",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "ぶざま",
+							 "nextId": 9
+							 },
+							 {
+							 "score": 1,
+							 "text": "またワックスかけないと",
+							 "nextId": 9
+							 },
+							 {
+							 "score": 3,
+							 "text": "靴下洗う？",
+							 "nextId": 9
+							 }
+							 ]
+				 },
+				 {
+				 "id": 25,
+				 "text": "やったー、絶対だよ",
+				 "type": "text",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "嘘だよー",
+							 "nextId": 24
+							 },
+							 {
+							 "score": 2,
+							 "text": "できれば安いのでお願いします",
+							 "nextId": 6
+							 },
+							 {
+							 "score": 3,
+							 "text": "期待してて",
+							 "nextId": 6
+							 }
+							 ]
+				 },
+				 {
+				 "id": 26,
+				 "text": "えへへ",
+				 "type": "text",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "そんなわけあるか！帰れ",
+							 "nextId": 7
+							 },
+							 {
+							 "score": 2,
+							 "text": "料理失敗したから食べて",
+							 "nextId": 7
+							 },
+							 {
+							 "score": 3,
+							 "text": "ゆっくりしていってね",
+							 "nextId": 7
+							 }
+							 ]
+				 },
+				 {
+				 "id": 27,
+				 "text": "あなたが醜い",
+				 "type": "text",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "そんなんだから捨てられるんだよ",
+							 "nextId": 8
+							 },
+							 {
+							 "score": 1,
+							 "text": "なんで？",
+							 "nextId": 8
+							 },
+							 {
+							 "score": 2,
+							 "text": "そうですとも",
+							 "nextId": 8
+							 }
+							 ]
+				 },
+				 {
+				 "id": 28,
+				 "text": "あなたが捕まればいいのに",
+				 "type": "text",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "ふざけるな",
+							 "nextId": 4
+							 },
+							 {
+							 "score": 1,
+							 "text": "はいはい、そうですか。",
+							 "nextId": 4
+							 },
+							 {
+							 "score": 1,
+							 "text": "頭大丈夫",
+							 "nextId": 4
+							 }
+							 ]
+				 },
+				 {
+				 "id": 29,
+				 "text": "楽しみ",
+				 "type": "text",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "人形焼きの名店",
+							 "nextId": 19
+							 },
+							 {
+							 "score": 2,
+							 "text": "自分も楽しみ",
+							 "nextId": 30
+							 },
+							 {
+							 "score": 3,
+							 "text": "有名人もよく来てるらしいよ",
+							 "nextId": 30
+							 }
+							 ]
+				 },
+				 {
+				 "id": 30,
+				 "text": "お会計払わないと・・・",
+				 "type": "text",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "あっ財布忘れた",
+							 "nextId": 31
+							 },
+							 {
+							 "score": 2,
+							 "text": "割り勘ね",
+							 "nextId": 34
+							 },
+							 {
+							 "score": 3,
+							 "text": "自分が払うよ",
+							 "nextId": 33
+							 }
+							 ]
+				 },
+				 {
+				 "id": 31,
+				 "text": "そうなの",
+				 "type": "text",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "今度なにか奢るね",
+							 "nextId": 32
+							 },
+							 {
+							 "score": 2,
+							 "text": "支払いお願いします",
+							 "nextId": 34
+							 },
+							 {
+							 "score": 3,
+							 "text": "嘘です、自分が払うよ",
+							 "nextId": 33
+							 }
+							 ]
+				 },
+				 {
+				 "id": 32,
+				 "text": "そうね！よろしく！",
+				 "type": "text",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "5円チョコおごる",
+							 "nextId": 34
+							 },
+							 {
+							 "score": 2,
+							 "text": "100年後に奢るね",
+							 "nextId": 34
+							 },
+							 {
+							 "score": 3,
+							 "text": "期待してて",
+							 "nextId": 33
+							 }
+							 ]
+				 },
+				 {
+				 "id": 33,
+				 "text": "ありがとう",
+				 "type": "text",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "敬っていいよ",
+							 "nextId": 19
+							 },
+							 {
+							 "score": 2,
+							 "text": "すごいでしょ",
+							 "nextId": 19
+							 },
+							 {
+							 "score": 3,
+							 "text": "うん",
+							 "nextId": 15
+							 }
+							 ]
+				 },
+				 {
+				 "id": 34,
+				 "text": "おいこら",
+				 "type": "text",
+				 "choices": [
+							 {
+							 "score": 1,
+							 "text": "ははは",
+							 "nextId": 19
+							 },
+							 {
+							 "score": 2,
+							 "text": "なんのことか分かりません",
+							 "nextId": 19
+							 },
+							 {
+							 "score": 3,
+							 "text": "ごめんね",
+							 "nextId": 15
+							 }
+							 ]
 				 }
 				 ]
 }
