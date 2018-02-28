@@ -26,7 +26,7 @@ class StoryListViewController: UIViewController {
 extension StoryListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 3
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -40,6 +40,15 @@ extension StoryListViewController: UITableViewDelegate {
         if indexPath.row == 0 {
             let vc = UIStoryboard(name: "Story", bundle: nil).instantiateInitialViewController()!
             self.navigationController?.pushViewController(vc, animated: true)
+        } else if indexPath.row == 1 {
+            let vc = UIStoryboard(name: "Call", bundle: nil).instantiateInitialViewController()!
+
+//            present(vc, animated: true, completion: nil)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else if indexPath.row == 2{
+            let vc = UIStoryboard(name: "SurpriseCamera", bundle: nil).instantiateInitialViewController()!
+            
+            self.navigationController?.pushViewController(vc, animated: false)
         }
     }
 }
