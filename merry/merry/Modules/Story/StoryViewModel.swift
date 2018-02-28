@@ -1,4 +1,4 @@
-//
+merry/Modules/Story/StoryViewController.swift//
 //  StoryViewModel.swift
 //  merry
 //
@@ -73,7 +73,6 @@ class StoryViewModel {
 
     func appendChoiceIntoChats(_ c: Chat.Choice) {
         totalScore.value += c.score
-
         let chat = Chat(c)
         chats.append(chat)
     }

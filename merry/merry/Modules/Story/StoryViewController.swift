@@ -72,23 +72,31 @@ extension StoryViewController {
                 self?.footerView.button3.setTitle(str, for: .normal)
             }).disposed(by: disposeBag)
 
-
         footerView.button1.rx.tap.withLatestFrom(viewModel.choice1.asObservable())
             .subscribe(onNext: { [weak self] (c) in
-                                self?.viewModel.nextChat(nextId: c.nextId)
-                                self?.tableView.reloadData()
+                guard let wself = self else { return }
+                wself.viewModel.appendChoiceIntoChats(c)
+                wself.viewModel.nextChat(nextId: c.nextId)
+                wself.tableView.reloadData()
+                wself.tableView.scrollToRow(at: IndexPath(row: wself.viewModel.chats.count-1, section: 0), at: .bottom, animated: true)
             }).disposed(by: disposeBag)
 
         footerView.button2.rx.tap.withLatestFrom(viewModel.choice2.asObservable())
             .subscribe(onNext: { [weak self] (c) in
-                self?.viewModel.nextChat(nextId: c.nextId)
-                self?.tableView.reloadData()
+                guard let wself = self else { return }
+                wself.viewModel.appendChoiceIntoChats(c)
+                wself.viewModel.nextChat(nextId: c.nextId)
+                wself.tableView.reloadData()
+                wself.tableView.scrollToRow(at: IndexPath(row: wself.viewModel.chats.count-1, section: 0), at: .bottom, animated: true)
             }).disposed(by: disposeBag)
 
         footerView.button3.rx.tap.withLatestFrom(viewModel.choice3.asObservable())
             .subscribe(onNext: { [weak self] (c) in
-                self?.viewModel.nextChat(nextId: c.nextId)
-                self?.tableView.reloadData()
+                guard let wself = self else { return }
+                wself.viewModel.appendChoiceIntoChats(c)
+                wself.viewModel.nextChat(nextId: c.nextId)
+                wself.tableView.reloadData()
+                wself.tableView.scrollToRow(at: IndexPath(row: wself.viewModel.chats.count-1, section: 0), at: .bottom, animated: true)
             }).disposed(by: disposeBag)
 
         viewModel.state.subscribe(onNext: { (s) in
@@ -100,7 +108,6 @@ extension StoryViewController {
             case .clear:
                 print("[state] clear")
             case .gameover:
-                
                 print("[state] gameover")
             }
         }).disposed(by: disposeBag)
