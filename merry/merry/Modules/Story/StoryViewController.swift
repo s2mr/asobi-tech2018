@@ -15,7 +15,8 @@ class StoryViewController: UIViewController {
 
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var footerView: StoryFooterView!
-
+    @IBOutlet weak var footerViewHeight: NSLayoutConstraint!
+    
     private let viewModel = StoryViewModel()
     private let disposeBag = DisposeBag()
 
@@ -43,6 +44,8 @@ class StoryViewController: UIViewController {
 
 extension StoryViewController {
     private func setupUI() {
+        footerView.alpha = 0.0
+
         tableView.backgroundColor = .black
         tableView.separatorColor = UIColor.clear
         tableView.estimatedRowHeight = 10000
@@ -99,6 +102,26 @@ extension StoryViewController {
                 wself.tableView.scrollToRow(at: IndexPath(row: wself.viewModel.chats.count-1, section: 0), at: .bottom, animated: true)
             }).disposed(by: disposeBag)
 
+        viewModel.shouldShowFooter.subscribe(onNext: { [weak self] (should) in
+            if should {
+                UIView.animate(withDuration: 0.5, animations: {
+//                    self?.tableView.frame.size.height = self!.view.frame.height - 200
+//                    self?.footerView.frame.origin.y = self!.view.frame.height - 200
+                    self?.footerView.alpha = 1.0
+                })
+//                self?.footerViewHeight.constant = 200
+//                self?.footerView.isHidden = false
+            } else {
+                UIView.animate(withDuration: 0.5, animations: {
+//                    self?.tableView.frame.size.height = self!.view.frame.height
+//                    self?.footerView.frame.origin.y = self!.view.frame.height
+                    self?.footerView.alpha = 0.0
+                })
+//                self?.footerViewHeight.constant = 0
+//                self?.footerView.isHidden = true
+            }
+        }).disposed(by: disposeBag)
+
         viewModel.state.subscribe(onNext: { (s) in
             switch s {
             case .normal:
@@ -111,6 +134,8 @@ extension StoryViewController {
                 print("[state] gameover")
             }
         }).disposed(by: disposeBag)
+
+//        viewModel.shouldShowFooter.onNext(false)
     }
 
     @objc func backgroundTapped() {

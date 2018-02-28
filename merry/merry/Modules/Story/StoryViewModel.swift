@@ -1,4 +1,4 @@
-merry/Modules/Story/StoryViewController.swift//
+//
 //  StoryViewModel.swift
 //  merry
 //
@@ -26,6 +26,7 @@ class StoryViewModel {
     let choice2: PublishSubject<Chat.Choice> = PublishSubject()
     let choice3: PublishSubject<Chat.Choice> = PublishSubject()
     let state: PublishSubject<State> = PublishSubject()
+    let shouldShowFooter: PublishSubject<Bool> = PublishSubject()
     let disposeBag = DisposeBag()
 
     var totalScore: Variable<Int> = Variable(0)
@@ -38,6 +39,7 @@ class StoryViewModel {
                 self?.state.onNext(.clear)
             }
         }).disposed(by: disposeBag)
+        
     }
 
     func nextChat(nextId: Int? = nil) {
@@ -55,9 +57,12 @@ class StoryViewModel {
         self.chats.append(c)
 
         if c.choices.count >= 3 {
+            shouldShowFooter.onNext(true)
             self.choice1.onNext(c.choices[0])
             self.choice2.onNext(c.choices[1])
             self.choice3.onNext(c.choices[2])
+        } else {
+            shouldShowFooter.onNext(false)
         }
 
         // audio

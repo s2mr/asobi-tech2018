@@ -34,7 +34,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="GJF-aV-v70" firstAttribute="bottom" secondItem="70r-3G-zzq" secondAttribute="bottom" id="GQH-QO-lKC"/>
                             <constraint firstItem="Gbv-p2-FWy" firstAttribute="leading" secondItem="GJF-aV-v70" secondAttribute="leading" id="VVT-yf-Rzd"/>
@@ -48,6 +48,7 @@
                     </view>
                     <connections>
                         <outlet property="footerView" destination="70r-3G-zzq" id="cqt-TZ-k2j"/>
+                        <outlet property="footerViewHeight" destination="0Ia-my-ksR" id="gCh-sK-cyG"/>
                         <outlet property="tableView" destination="Gbv-p2-FWy" id="j8h-wd-3S9"/>
                     </connections>
                 </viewController>

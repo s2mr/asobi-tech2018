@@ -202,23 +202,7 @@
 				 "id": 10,
 				 "text": "私、メリーさん。今、あなたの後ろにいるの",
 				 "type": "fin",
-				 "choices": [
-							 {
-							 "score": "",
-							 "text": "",
-							 "nextId": ""
-							 },
-							 {
-							 "score": "",
-							 "text": "",
-							 "nextId": ""
-							 },
-							 {
-							 "score": "",
-							 "text": "",
-							 "nextId": ""
-							 }
-							 ]
+				 "choices": []
 				 }
 				 ]
 }

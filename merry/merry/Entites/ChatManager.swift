@@ -17,7 +17,7 @@ class ChatManager {
     init() {
         guard let path = Bundle.main.path(forResource: "StubChatText", ofType: "json"), let fileHandle = FileHandle(forReadingAtPath: path) else { return }
         let data = fileHandle.readDataToEndOfFile()
-        self.chats = try! unbox(data: data, atKeyPath: "chatText", allowInvalidElements: true)
+        self.chats = try! unbox(data: data, atKeyPath: "chatText", allowInvalidElements: false)
     }
 
     func getNextChat(id: Int? = nil) -> Chat? {
