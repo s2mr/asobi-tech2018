@@ -39,7 +39,10 @@ extension StoryListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             let vc = UIStoryboard(name: "Story", bundle: nil).instantiateInitialViewController()!
+            vc.title = "メリーさん"
             self.navigationController?.pushViewController(vc, animated: true)
+            navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+            self.navigationController?.navigationBar.isTranslucent = false
         } else if indexPath.row == 1 {
             let vc = UIStoryboard(name: "Call", bundle: nil).instantiateInitialViewController()!
 
