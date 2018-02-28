@@ -11,10 +11,13 @@ import AudioToolbox
 import AVFoundation
 
 class CallViewController: UIViewController {
-
+    let viewModel = StoryViewModel()
+    
     var timer = Timer()
     
     var audioPlayer = AVAudioPlayer()
+    
+    public var talkString = "私今あなたのそばにいるの"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +77,10 @@ class CallViewController: UIViewController {
     
     @IBAction func response(_ sender: Any) {
         callResponse.isHidden = true
-        playVoice(fileName: "why", type: "mp3")
+        timer.invalidate()
+        audioPlayer.stop()
+        //playVoice(fileName: "why", type: "mp3")
+        viewModel.talkString(talkText: talkString)
     }
     /*
     // MARK: - Navigation
