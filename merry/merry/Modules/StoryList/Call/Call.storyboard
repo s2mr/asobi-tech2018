@@ -19,26 +19,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llk-Vy-OmO">
-                                <rect key="frame" x="154.5" y="508" width="65" height="51"/>
+                                <rect key="frame" x="147.5" y="493.5" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="QBK-Xu-akU"/>
+                                    <constraint firstAttribute="height" constant="80" id="acv-dK-QUq"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <state key="normal" title="応答"/>
+                                <state key="normal" backgroundImage="call_icon_2"/>
                                 <connections>
                                     <action selector="response:" destination="jAo-Y7-JMv" eventType="touchDown" id="ZCZ-ht-I7J"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="マリー" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szB-AT-N93">
-                                <rect key="frame" x="139" y="114.5" width="97" height="38.5"/>
+                                <rect key="frame" x="139" y="70" width="97" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="merry_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Sje-Zc-td4">
+                                <rect key="frame" x="97" y="158.5" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="GeC-rH-R1a"/>
+                                    <constraint firstAttribute="height" constant="180" id="rgB-Pa-uyd"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="szB-AT-N93" firstAttribute="centerY" secondItem="U1h-w9-tH0" secondAttribute="centerY" constant="-200" id="1gQ-mO-boQ"/>
+                            <constraint firstItem="Sje-Zc-td4" firstAttribute="top" secondItem="szB-AT-N93" secondAttribute="bottom" constant="50" id="4zT-bn-1wz"/>
                             <constraint firstItem="szB-AT-N93" firstAttribute="centerX" secondItem="U1h-w9-tH0" secondAttribute="centerX" id="Ix0-0T-3kg"/>
                             <constraint firstItem="llk-Vy-OmO" firstAttribute="centerX" secondItem="U1h-w9-tH0" secondAttribute="centerX" id="YH5-4S-ewL"/>
+                            <constraint firstItem="Sje-Zc-td4" firstAttribute="centerX" secondItem="U1h-w9-tH0" secondAttribute="centerX" id="lf0-m3-iuq"/>
                             <constraint firstItem="llk-Vy-OmO" firstAttribute="centerY" secondItem="U1h-w9-tH0" secondAttribute="centerY" constant="200" id="rEY-6S-xBp"/>
+                            <constraint firstItem="szB-AT-N93" firstAttribute="top" secondItem="gfA-Dx-uOe" secondAttribute="top" constant="50" id="u5l-Aw-w2d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gfA-Dx-uOe"/>
                     </view>
@@ -51,4 +64,8 @@
             <point key="canvasLocation" x="-90.400000000000006" y="241.52923538230885"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="call_icon_2" width="256" height="256"/>
+        <image name="merry_icon" width="256" height="256"/>
+    </resources>
 </document>
