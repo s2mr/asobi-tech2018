@@ -89,16 +89,18 @@ extension StoryViewController {
                     imageView.image = combo
                     wself.view.addSubview(imageView)
 
+//                    wself.viewModel.appendChoiceIntoChats(c)
+//                    wself.viewModel.nextChat(nextId: c.nextId)
                     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8){
                         imageView.removeFromSuperview()
-                        wself.viewModel.appendChoiceIntoChats(c)
-                        wself.viewModel.nextChat(nextId: c.nextId)
                     }
                 }else{
                     self?.comboManager.endCombo()
-                    wself.viewModel.appendChoiceIntoChats(c)
-                    wself.viewModel.nextChat(nextId: c.nextId)
+//                    wself.viewModel.appendChoiceIntoChats(c)
+//                    wself.viewModel.nextChat(nextId: c.nextId)
                 }
+                wself.viewModel.appendChoiceIntoChats(c)
+                wself.viewModel.nextChat(nextId: c.nextId)
                 wself.tableView.reloadData()
                 wself.tableView.scrollToRow(at: IndexPath(row: wself.viewModel.chats.count-1, section: 0), at: .bottom, animated: true)
             }).disposed(by: disposeBag)
@@ -112,16 +114,18 @@ extension StoryViewController {
                     imageView.image = combo
                     wself.view.addSubview(imageView)
 
+//                    wself.viewModel.appendChoiceIntoChats(c)
+//                    wself.viewModel.nextChat(nextId: c.nextId)
                     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8){
                         imageView.removeFromSuperview()
-                        wself.viewModel.appendChoiceIntoChats(c)
-                        wself.viewModel.nextChat(nextId: c.nextId)
                     }
                 }else{
                     self?.comboManager.endCombo()
-                    wself.viewModel.appendChoiceIntoChats(c)
-                    wself.viewModel.nextChat(nextId: c.nextId)
+//                    wself.viewModel.appendChoiceIntoChats(c)
+//                    wself.viewModel.nextChat(nextId: c.nextId)
                 }
+                wself.viewModel.appendChoiceIntoChats(c)
+                wself.viewModel.nextChat(nextId: c.nextId)
                 wself.tableView.reloadData()
                 wself.tableView.scrollToRow(at: IndexPath(row: wself.viewModel.chats.count-1, section: 0), at: .bottom, animated: true)
             }).disposed(by: disposeBag)
@@ -135,16 +139,18 @@ extension StoryViewController {
                     imageView.image = combo
                     wself.view.addSubview(imageView)
 
+//                    wself.viewModel.appendChoiceIntoChats(c)
+//                    wself.viewModel.nextChat(nextId: c.nextId)
                     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8){
                         imageView.removeFromSuperview()
-                        wself.viewModel.appendChoiceIntoChats(c)
-                        wself.viewModel.nextChat(nextId: c.nextId)
                     }
                 }else{
                     self?.comboManager.endCombo()
-                    wself.viewModel.appendChoiceIntoChats(c)
-                    wself.viewModel.nextChat(nextId: c.nextId)
+//                    wself.viewModel.appendChoiceIntoChats(c)
+//                    wself.viewModel.nextChat(nextId: c.nextId)
                 }
+                wself.viewModel.appendChoiceIntoChats(c)
+                wself.viewModel.nextChat(nextId: c.nextId)
                 wself.tableView.reloadData()
                 wself.tableView.scrollToRow(at: IndexPath(row: wself.viewModel.chats.count-1, section: 0), at: .bottom, animated: true)
             }).disposed(by: disposeBag)
@@ -167,9 +173,11 @@ extension StoryViewController {
                 print("[state] normal")
             case .calling(let chat):
                 print("[state] calling")
-                let vc = UIStoryboard(name: "Call", bundle: nil).instantiateInitialViewController() as! CallViewController
-                vc.talkString = chat.text
-                self.present(vc, animated: false, completion: nil)
+                DispatchQueue.main.asyncAfter(deadline: .now()+0.8, execute: {
+                    let vc = UIStoryboard(name: "Call", bundle: nil).instantiateInitialViewController() as! CallViewController
+                    vc.talkString = chat.text
+                    self.present(vc, animated: false, completion: nil)
+                })
             case .clear(let score):
                 print("[state] clear")
                 let vc = UIStoryboard(name: "Clear", bundle: nil).instantiateInitialViewController() as! ClearViewController

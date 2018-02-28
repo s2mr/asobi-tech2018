@@ -43,7 +43,12 @@ class StoryViewModel {
     }
 
     func nextChat(nextId: Int? = nil) {
-        guard let c = chatManager.getNextChat(id: nextId) else { return }
+        guard let c = chatManager.getNextChat(id: nextId) else {
+            print("aaa")
+            return
+        }
+
+        print("[NEXT]\(c)")
 
         switch c.type {
         case .text:
@@ -77,6 +82,7 @@ class StoryViewModel {
     }
 
     func appendChoiceIntoChats(_ c: Chat.Choice) {
+        print("[My]: \(c)")
         totalScore.value += c.score
         let chat = Chat(c)
         chats.append(chat)
