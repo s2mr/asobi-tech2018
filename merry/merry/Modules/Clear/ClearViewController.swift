@@ -11,8 +11,9 @@ import UIKit
 class ClearViewController: UIViewController {
 
     @IBOutlet weak var scoreLabel: UILabel!
-    
     @IBOutlet weak var storySelectButton: UIButton!
+
+    var parentVC: UIViewController?
     
     public var displayScore:Int = 10
     
@@ -33,6 +34,8 @@ class ClearViewController: UIViewController {
     }
     
     @IBAction func ButtonTouchUp(_ sender: Any) {
-        
+        dismiss(animated: false, completion: { [weak self] in
+            self?.parentVC?.navigationController?.popToRootViewController(animated: true)
+        })
     }
 }

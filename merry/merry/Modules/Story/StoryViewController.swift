@@ -15,7 +15,7 @@ class StoryViewController: UIViewController {
 
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var footerView: StoryFooterView!
-    @IBOutlet weak var footerViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var footerViewHeight: NSLayoutConstraint! // not use
     
     private let viewModel = StoryViewModel()
     private let disposeBag = DisposeBag()
@@ -26,11 +26,6 @@ class StoryViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         subscribe()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -153,20 +148,12 @@ extension StoryViewController {
         viewModel.shouldShowFooter.subscribe(onNext: { [weak self] (should) in
             if should {
                 UIView.animate(withDuration: 0.5, animations: {
-//                    self?.tableView.frame.size.height = self!.view.frame.height - 200
-//                    self?.footerView.frame.origin.y = self!.view.frame.height - 200
                     self?.footerView.alpha = 1.0
                 })
-//                self?.footerViewHeight.constant = 200
-//                self?.footerView.isHidden = false
             } else {
                 UIView.animate(withDuration: 0.5, animations: {
-//                    self?.tableView.frame.size.height = self!.view.frame.height
-//                    self?.footerView.frame.origin.y = self!.view.frame.height
                     self?.footerView.alpha = 0.0
                 })
-//                self?.footerViewHeight.constant = 0
-//                self?.footerView.isHidden = true
             }
         }).disposed(by: disposeBag)
 
@@ -174,16 +161,23 @@ extension StoryViewController {
             switch s {
             case .normal:
                 print("[state] normal")
-            case .calling:
+            case .calling(let chat):
                 print("[state] calling")
-            case .clear:
+                let vc = UIStoryboard(name: "Call", bundle: nil).instantiateInitialViewController() as! CallViewController
+                vc.talkString = chat.text
+                self.present(vc, animated: false, completion: nil)
+            case .clear(let score):
                 print("[state] clear")
+                let vc = UIStoryboard(name: "Clear", bundle: nil).instantiateInitialViewController() as! ClearViewController
+                vc.displayScore = score
+                vc.parentVC = self
+                self.present(vc, animated: false, completion: nil)
             case .gameover:
                 print("[state] gameover")
+                let vc = UIStoryboard(name: "SurpriseCamera", bundle: nil).instantiateInitialViewController() as! SupriseCameraViewController
+                self.present(vc, animated: false, completion: nil)
             }
         }).disposed(by: disposeBag)
-
-//        viewModel.shouldShowFooter.onNext(false)
     }
 
     @objc func backgroundTapped() {

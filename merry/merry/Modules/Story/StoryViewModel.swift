@@ -14,8 +14,8 @@ class StoryViewModel {
 
     enum State {
         case normal
-        case calling
-        case clear
+        case calling(chat: Chat)
+        case clear(score: Int)
         case gameover
     }
 
@@ -36,7 +36,7 @@ class StoryViewModel {
     init() {
         totalScore.asObservable().subscribe(onNext: { [weak self] (score) in
             if score > 5 {
-                self?.state.onNext(.clear)
+                self?.state.onNext(.clear(score: score))
             }
         }).disposed(by: disposeBag)
         
@@ -49,7 +49,7 @@ class StoryViewModel {
         case .text:
             state.onNext(.normal)
         case .call:
-            state.onNext(.calling)
+            state.onNext(.calling(chat: c))
         case .fin:
             state.onNext(.gameover)
         }

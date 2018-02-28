@@ -9,6 +9,7 @@
 import UIKit
 import AudioToolbox
 import AVFoundation
+import RxSwift
 
 class CallViewController: UIViewController {
     var talker = AVSpeechSynthesizer()
@@ -16,16 +17,25 @@ class CallViewController: UIViewController {
     var timer = Timer()
     
     var audioPlayer = AVAudioPlayer()
+
+    let disposeBag = DisposeBag()
     
-    public var talkString = "私今あなたのそばにいるの"
+    public var talkString: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+        button.backgroundColor = .blue
+        button.setTitle("X", for: .normal)
+        button.rx.tap.subscribe(onNext: { [weak self] _ in
+            self?.dismiss(animated: false, completion: nil)
+        }).disposed(by: disposeBag)
+        self.view.addSubview(button)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
         timer.invalidate()
         audioPlayer.stop()
     }
@@ -106,7 +116,7 @@ extension CallViewController: AVAudioPlayerDelegate {
 
 extension CallViewController : AVSpeechSynthesizerDelegate{
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: false, completion: nil)
     }
 }
 

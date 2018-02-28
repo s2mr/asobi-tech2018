@@ -30,6 +30,8 @@
 		6E7BF3FD20459F3D00F60826 /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BF3FC20459F3D00F60826 /* ChatManager.swift */; };
 		6E7BF4002045C19900F60826 /* StoryFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E7BF3FF2045C19900F60826 /* StoryFooterView.xib */; };
 		6E7BF4022045C7E700F60826 /* StoryFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BF4012045C7E700F60826 /* StoryFooterView.swift */; };
+		6E7BF40620464FDD00F60826 /* Clear.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E7BF40420464FDD00F60826 /* Clear.storyboard */; };
+		6E7BF40720464FDD00F60826 /* ClearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BF40520464FDD00F60826 /* ClearViewController.swift */; };
 		D60301912045C0C300530BAD /* SupriseCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60301902045C0C300530BAD /* SupriseCameraViewController.swift */; };
 		D60301932045C18400530BAD /* SurpriseCamera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D60301922045C18400530BAD /* SurpriseCamera.storyboard */; };
 		D60301A12046548B00530BAD /* ComboManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60301A02046548B00530BAD /* ComboManager.swift */; };
@@ -67,6 +69,8 @@
 		6E7BF3FC20459F3D00F60826 /* ChatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
 		6E7BF3FF2045C19900F60826 /* StoryFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryFooterView.xib; sourceTree = "<group>"; };
 		6E7BF4012045C7E700F60826 /* StoryFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryFooterView.swift; sourceTree = "<group>"; };
+		6E7BF40420464FDD00F60826 /* Clear.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Clear.storyboard; sourceTree = "<group>"; };
+		6E7BF40520464FDD00F60826 /* ClearViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearViewController.swift; sourceTree = "<group>"; };
 		9820E4943372C48FE2F9C23D /* Pods-merry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merry.release.xcconfig"; path = "Pods/Target Support Files/Pods-merry/Pods-merry.release.xcconfig"; sourceTree = "<group>"; };
 		B5FA9172C87F29DC27B1A6A5 /* Pods_merry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_merry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60301902045C0C300530BAD /* SupriseCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupriseCameraViewController.swift; sourceTree = "<group>"; };
@@ -138,7 +142,7 @@
 		6E7BF3D7204568B100F60826 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				D60301A42046598B00530BAD /* Clear */,
+				6E7BF40320464FDD00F60826 /* Clear */,
 				D603018F2045C09700530BAD /* FrontCameraSurprise */,
 				6E7BF3DF20456FF600F60826 /* Story */,
 				6E7BF3D8204568C000F60826 /* StoryList */,
@@ -219,6 +223,15 @@
 				6E7BF4012045C7E700F60826 /* StoryFooterView.swift */,
 			);
 			path = StoryFooter;
+			sourceTree = "<group>";
+		};
+		6E7BF40320464FDD00F60826 /* Clear */ = {
+			isa = PBXGroup;
+			children = (
+				6E7BF40420464FDD00F60826 /* Clear.storyboard */,
+				6E7BF40520464FDD00F60826 /* ClearViewController.swift */,
+			);
+			path = Clear;
 			sourceTree = "<group>";
 		};
 		B80DCED89D422C3B2A7B801E /* Pods */ = {
@@ -339,6 +352,7 @@
 				D623E8F420457AC4001A47F5 /* Call.storyboard in Resources */,
 				6E7BF3ED2045722600F60826 /* YourChatViewCell.xib in Resources */,
 				6E7BF3EB2045722600F60826 /* MyChatViewCell.xib in Resources */,
+				6E7BF40620464FDD00F60826 /* Clear.storyboard in Resources */,
 				6E7BF3FB20459D7900F60826 /* StubChatText.json in Resources */,
 				6E7BF3E32045700D00F60826 /* Story.storyboard in Resources */,
 				6E7BF3CB204567C500F60826 /* StoryList.storyboard in Resources */,
@@ -426,6 +440,7 @@
 				D60301A12046548B00530BAD /* ComboManager.swift in Sources */,
 				6E7BF3F820459C9C00F60826 /* Chat.swift in Sources */,
 				6E7BF3EF2045738400F60826 /* MyBalloonView.swift in Sources */,
+				6E7BF40720464FDD00F60826 /* ClearViewController.swift in Sources */,
 				6E7BF3DD2045697C00F60826 /* StoryListTableViewCell.swift in Sources */,
 				D623E8F220457ABC001A47F5 /* CallViewController.swift in Sources */,
 				6E7BF3F520459BD400F60826 /* StoryViewModel.swift in Sources */,
@@ -569,7 +584,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5NPG5R2A3R;
+				DEVELOPMENT_TEAM = TKM4VSA3YF;
 				INFOPLIST_FILE = merry/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bigriver..merry;
@@ -585,7 +600,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5NPG5R2A3R;
+				DEVELOPMENT_TEAM = TKM4VSA3YF;
 				INFOPLIST_FILE = merry/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bigriver..merry;
