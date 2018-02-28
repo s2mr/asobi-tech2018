@@ -118,9 +118,11 @@ extension StoryViewController {
                 let vc = UIStoryboard(name: "Call", bundle: nil).instantiateInitialViewController() as! CallViewController
                 vc.talkString = chat.text
                 self.present(vc, animated: false, completion: nil)
-            case .clear:
+            case .clear(let score):
                 print("[state] clear")
                 let vc = UIStoryboard(name: "Clear", bundle: nil).instantiateInitialViewController() as! ClearViewController
+                vc.displayScore = score
+                vc.parentVC = self
                 self.present(vc, animated: false, completion: nil)
             case .gameover:
                 print("[state] gameover")
@@ -128,8 +130,6 @@ extension StoryViewController {
                 self.present(vc, animated: false, completion: nil)
             }
         }).disposed(by: disposeBag)
-
-//        viewModel.shouldShowFooter.onNext(false)
     }
 
     @objc func backgroundTapped() {
