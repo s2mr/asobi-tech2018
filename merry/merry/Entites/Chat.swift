@@ -41,4 +41,12 @@ struct Chat: Unboxable {
         choices = try unboxer.unbox(key: "choices")
         owner = .other
     }
+
+    init(_ c: Choice) {
+        id = -1
+        text = c.text
+        type = ""
+        choices = []
+        owner = .self
+    }
 }

@@ -11,8 +11,8 @@ import RxSwift
 import AVFoundation
 
 class StoryViewModel {
-	
-	var talker = AVSpeechSynthesizer()
+
+    var talker = AVSpeechSynthesizer()
 
     var chats: [Chat] = [] // for present
 
@@ -22,8 +22,8 @@ class StoryViewModel {
 
     private let chatManager = ChatManager()
 
-    func nextChat() {
-        guard let c = chatManager.getNextChat() else { return }
+    func nextChat(nextId: Int? = nil) {
+        guard let c = chatManager.getNextChat(id: nextId) else { return }
         self.chats.append(c)
 
         if c.choices.count >= 3 {
@@ -32,16 +32,19 @@ class StoryViewModel {
             self.choice3.onNext(c.choices[2])
         }
 
+        // audio
+        if c.type == "call" {
+            let utterance = AVSpeechUtterance(string:c.text)
+            utterance.voice = AVSpeechSynthesisVoice(language: "ja-JP")
+            utterance.rate = 0.45
+            utterance.pitchMultiplier = 1.5
+            self.talker.speak(utterance)
+            print(c.text)
+        }
+    }
 
-		
-		// audio
-		if c.type == "call" {
-			let utterance = AVSpeechUtterance(string:c.text)
-			utterance.voice = AVSpeechSynthesisVoice(language: "ja-JP")
-			utterance.rate = 0.45
-			utterance.pitchMultiplier = 1.5
-			self.talker.speak(utterance)
-			print(c.text)
-		}
+    func appendChoiceIntoChats(_ c: Chat.Choice) {
+        let chat = Chat(c)
+        chats.append(chat)
     }
 }

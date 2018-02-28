@@ -71,6 +71,25 @@ extension StoryViewController {
             .subscribe(onNext: { [weak self] (str) in
                 self?.footerView.button3.setTitle(str, for: .normal)
             }).disposed(by: disposeBag)
+
+
+        footerView.button1.rx.tap.withLatestFrom(viewModel.choice1.asObservable())
+            .subscribe(onNext: { [weak self] (c) in
+                                self?.viewModel.nextChat(nextId: c.nextId)
+                                self?.tableView.reloadData()
+            }).disposed(by: disposeBag)
+
+        footerView.button2.rx.tap.withLatestFrom(viewModel.choice2.asObservable())
+            .subscribe(onNext: { [weak self] (c) in
+                self?.viewModel.nextChat(nextId: c.nextId)
+                self?.tableView.reloadData()
+            }).disposed(by: disposeBag)
+
+        footerView.button3.rx.tap.withLatestFrom(viewModel.choice3.asObservable())
+            .subscribe(onNext: { [weak self] (c) in
+                self?.viewModel.nextChat(nextId: c.nextId)
+                self?.tableView.reloadData()
+            }).disposed(by: disposeBag)
     }
 
     @objc func backgroundTapped() {

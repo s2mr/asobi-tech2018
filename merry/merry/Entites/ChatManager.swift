@@ -20,17 +20,24 @@ class ChatManager {
         self.chats = try! unbox(data: data, atKeyPath: "chatText", allowInvalidElements: false)
     }
 
-    func getNextChat() -> Chat? {
-        for c in self.chats {
-            if c.id == nextId {
-                nextId += 1
-                return c
+    func getNextChat(id: Int? = nil) -> Chat? {
+        if id == nil {
+            //next
+            for c in self.chats {
+                if c.id == nextId {
+                    nextId += 1
+                    return c
+                }
             }
+        } else {
+            return getChat(by: id)
         }
+
         return nil
     }
 
-    func getChat(by id: Int) -> Chat? {
+    private func getChat(by id: Int?) -> Chat? {
+        guard let id = id else { return nil }
         for c in self.chats {
             if c.id == id {
                 return c
