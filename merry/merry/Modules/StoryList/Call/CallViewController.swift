@@ -17,7 +17,7 @@ class CallViewController: UIViewController {
     
     var audioPlayer = AVAudioPlayer()
     
-    public var talkString = "私今あなたのそばにいるの"
+    public var talkString: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,6 @@ class CallViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
         timer.invalidate()
         audioPlayer.stop()
     }
@@ -106,7 +105,7 @@ extension CallViewController: AVAudioPlayerDelegate {
 
 extension CallViewController : AVSpeechSynthesizerDelegate{
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: false, completion: nil)
     }
 }
 

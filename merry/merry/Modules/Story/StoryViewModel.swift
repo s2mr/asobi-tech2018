@@ -14,7 +14,7 @@ class StoryViewModel {
 
     enum State {
         case normal
-        case calling
+        case calling(chat: Chat)
         case clear
         case gameover
     }
@@ -49,7 +49,7 @@ class StoryViewModel {
         case .text:
             state.onNext(.normal)
         case .call:
-            state.onNext(.calling)
+            state.onNext(.calling(chat: c))
         case .fin:
             state.onNext(.gameover)
         }
