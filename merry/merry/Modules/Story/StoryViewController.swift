@@ -53,6 +53,7 @@ extension StoryViewController {
 
         tableView.register(UINib(nibName: "YourChatViewCell", bundle: nil), forCellReuseIdentifier: "YourChat")
         tableView.register(UINib(nibName: "MyChatViewCell", bundle: nil), forCellReuseIdentifier: "MyChat")
+		tableView.register(UINib(nibName: "CallViewCell", bundle: nil), forCellReuseIdentifier: "Called")
 
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.backgroundTapped))
         tapRecognizer.cancelsTouchesInView = false // TableViewへタップイベントを流す
@@ -197,19 +198,26 @@ extension StoryViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let chat = viewModel.chats[indexPath.row]
-        switch chat.owner {
-        case .self:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MyChat") as! MyChatViewCell
-            cell.clipsToBounds = true
-            // Todo: isRead
-            cell.updateCell(text: chat.text, time: "", isRead: true)
-            return cell
-        case .other:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "YourChat") as! YourChatViewCell
-            cell.clipsToBounds = true
-            cell.updateCell(text: chat.text, time: "")
-            return cell
-        }
+		
+		if chat.type == .call {
+			let cell = tableView.dequeueReusableCell(withIdentifier: "Called") as! CallViewCell
+//			cell.heightAnchor = 30
+			return cell
+		} else {
+			switch chat.owner {
+			case .self:
+				let cell = tableView.dequeueReusableCell(withIdentifier: "MyChat") as! MyChatViewCell
+				cell.clipsToBounds = true
+				// Todo: isRead
+				cell.updateCell(text: chat.text, time: "", isRead: true)
+				return cell
+			case .other:
+				let cell = tableView.dequeueReusableCell(withIdentifier: "YourChat") as! YourChatViewCell
+				cell.clipsToBounds = true
+				cell.updateCell(text: chat.text, time: "")
+				return cell
+			}
+		}
     }
 }
 
