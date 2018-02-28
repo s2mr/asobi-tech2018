@@ -90,17 +90,23 @@ class SupriseCameraViewController: UIViewController {
         
         self.view.layer.addSublayer(previewLayer)
         
+        
+        
         let screenWidth = UIScreen.main.bounds.size.width
         let screenHeight = UIScreen.main.bounds.size.height
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0)
-        {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
             self.imageView = UIImageView(frame: CGRect(x: (screenWidth/2.0)-50+80, y: (screenHeight/2.0)-50-100, width: 10, height: 10))
             self.imageView.image = UIImage(named: "merry2")
             self.view.layer.addSublayer(self.imageView.layer)
-            
             self.timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: self.big)
         }
+        
+        let image = UIImage(named: "camera_flame")
+        let v = UIImageView(frame: self.view.frame)
+        v.alpha = 1.0
+        v.image = image
+        self.view.addSubview(v)
         
         session.startRunning()
     }
