@@ -11,16 +11,16 @@ import AudioToolbox
 import AVFoundation
 
 class CallViewController: UIViewController {
-
+    var talker = AVSpeechSynthesizer()
+    
     var timer = Timer()
     
     var audioPlayer = AVAudioPlayer()
     
+    public var talkString = "私今あなたのそばにいるの"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-//        timer.inval
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -34,6 +34,8 @@ class CallViewController: UIViewController {
         super.viewDidAppear(animated)
         
         timer = Timer.scheduledTimer(withTimeInterval: 0.6, repeats: true, block: vibrate)
+        
+        self.talker.delegate = self
         
         do{
             let filePath = Bundle.main.path(forResource: "ring", ofType: "mp3")
@@ -72,20 +74,25 @@ class CallViewController: UIViewController {
     
     @IBOutlet weak var callResponse: UIButton!
     
+    @IBOutlet weak var talkNow: UILabel!
+    
     @IBAction func response(_ sender: Any) {
         callResponse.isHidden = true
-        playVoice(fileName: "why", type: "mp3")
+        talkNow.isHidden = false
+        timer.invalidate()
+        audioPlayer.stop()
+        //playVoice(fileName: "why", type: "mp3")
+        talkString(talkText: talkString)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func talkString(talkText: String)
+    {
+        let utterance = AVSpeechUtterance(string:talkText)
+        utterance.voice = AVSpeechSynthesisVoice(language:"ja-JP")
+        utterance.rate = 0.45
+        utterance.pitchMultiplier = 1.5
+        self.talker.speak(utterance)
     }
-    */
-
 }
 
 extension CallViewController: AVAudioPlayerDelegate {
@@ -96,3 +103,10 @@ extension CallViewController: AVAudioPlayerDelegate {
         }
     }
 }
+
+extension CallViewController : AVSpeechSynthesizerDelegate{
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        self.navigationController?.popViewController(animated: true)
+    }
+}
+
