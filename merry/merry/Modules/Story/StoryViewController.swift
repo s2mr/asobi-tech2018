@@ -26,6 +26,9 @@ class StoryViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         subscribe()
+
+        viewModel.nextChat()
+        self.tableView.reloadData()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -55,9 +58,9 @@ extension StoryViewController {
         tableView.register(UINib(nibName: "MyChatViewCell", bundle: nil), forCellReuseIdentifier: "MyChat")
 		tableView.register(UINib(nibName: "CallViewCell", bundle: nil), forCellReuseIdentifier: "Called")
 
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.backgroundTapped))
-        tapRecognizer.cancelsTouchesInView = false // TableViewへタップイベントを流す
-        self.tableView.addGestureRecognizer(tapRecognizer)
+//        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.backgroundTapped))
+//        tapRecognizer.cancelsTouchesInView = false // TableViewへタップイベントを流す
+//        self.tableView.addGestureRecognizer(tapRecognizer)
     }
 
     private func subscribe() {
@@ -80,70 +83,67 @@ extension StoryViewController {
         footerView.button1.rx.tap.withLatestFrom(viewModel.choice1.asObservable())
             .subscribe(onNext: { [weak self] (c) in
                 guard let wself = self else { return }
-                wself.viewModel.appendChoiceIntoChats(c)
-                wself.viewModel.nextChat(nextId: c.nextId)
-                wself.tableView.reloadData()
-                wself.tableView.scrollToRow(at: IndexPath(row: wself.viewModel.chats.count-1, section: 0), at: .bottom, animated: true)
-                
                 if c.score >= 3{
-                    var combo = self?.comboManager.getNextComboImage()
+                    let combo = wself.comboManager.getNextComboImage()
                     let imageView = UIImageView(frame: CGRect(x: (screenWidth / 2.0) - 100, y: 300, width: 200, height: 100))
-                        imageView.image = combo
-                    
-                    self?.view.addSubview(imageView)
-                    
+                    imageView.image = combo
+                    wself.view.addSubview(imageView)
+
                     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8){
                         imageView.removeFromSuperview()
+                        wself.viewModel.nextChat(nextId: c.nextId)
                     }
                 }else{
                     self?.comboManager.endCombo()
+                    wself.viewModel.nextChat(nextId: c.nextId)
                 }
+                wself.viewModel.appendChoiceIntoChats(c)
+                wself.tableView.reloadData()
+                wself.tableView.scrollToRow(at: IndexPath(row: wself.viewModel.chats.count-1, section: 0), at: .bottom, animated: true)
             }).disposed(by: disposeBag)
         
         footerView.button2.rx.tap.withLatestFrom(viewModel.choice2.asObservable())
             .subscribe(onNext: { [weak self] (c) in
                 guard let wself = self else { return }
-                wself.viewModel.appendChoiceIntoChats(c)
-                wself.viewModel.nextChat(nextId: c.nextId)
-                wself.tableView.reloadData()
-                wself.tableView.scrollToRow(at: IndexPath(row: wself.viewModel.chats.count-1, section: 0), at: .bottom, animated: true)
-                
                 if c.score >= 3{
-                    var combo = self?.comboManager.getNextComboImage()
+                    let combo = wself.comboManager.getNextComboImage()
                     let imageView = UIImageView(frame: CGRect(x: (screenWidth / 2.0) - 100, y: 300, width: 200, height: 100))
                     imageView.image = combo
-                    
-                    self?.view.addSubview(imageView)
-                    
+                    wself.view.addSubview(imageView)
+
                     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8){
                         imageView.removeFromSuperview()
+                        wself.viewModel.nextChat(nextId: c.nextId)
                     }
                 }else{
                     self?.comboManager.endCombo()
+                    wself.viewModel.nextChat(nextId: c.nextId)
                 }
+                wself.viewModel.appendChoiceIntoChats(c)
+                wself.tableView.reloadData()
+                wself.tableView.scrollToRow(at: IndexPath(row: wself.viewModel.chats.count-1, section: 0), at: .bottom, animated: true)
             }).disposed(by: disposeBag)
 
         footerView.button3.rx.tap.withLatestFrom(viewModel.choice3.asObservable())
             .subscribe(onNext: { [weak self] (c) in
                 guard let wself = self else { return }
-                wself.viewModel.appendChoiceIntoChats(c)
-                wself.viewModel.nextChat(nextId: c.nextId)
-                wself.tableView.reloadData()
-                wself.tableView.scrollToRow(at: IndexPath(row: wself.viewModel.chats.count-1, section: 0), at: .bottom, animated: true)
-                
                 if c.score >= 3{
-                    var combo = self?.comboManager.getNextComboImage()
+                    let combo = wself.comboManager.getNextComboImage()
                     let imageView = UIImageView(frame: CGRect(x: (screenWidth / 2.0) - 100, y: 300, width: 200, height: 100))
                     imageView.image = combo
-                    
-                    self?.view.addSubview(imageView)
-                    
+                    wself.view.addSubview(imageView)
+
                     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8){
                         imageView.removeFromSuperview()
+                        wself.viewModel.nextChat(nextId: c.nextId)
                     }
                 }else{
                     self?.comboManager.endCombo()
+                    wself.viewModel.nextChat(nextId: c.nextId)
                 }
+                wself.viewModel.appendChoiceIntoChats(c)
+                wself.tableView.reloadData()
+                wself.tableView.scrollToRow(at: IndexPath(row: wself.viewModel.chats.count-1, section: 0), at: .bottom, animated: true)
             }).disposed(by: disposeBag)
 
         viewModel.shouldShowFooter.subscribe(onNext: { [weak self] (should) in
@@ -179,11 +179,6 @@ extension StoryViewController {
                 self.present(vc, animated: false, completion: nil)
             }
         }).disposed(by: disposeBag)
-    }
-
-    @objc func backgroundTapped() {
-        viewModel.nextChat()
-        self.tableView.reloadData()
     }
 }
 

@@ -35,7 +35,7 @@ class StoryViewModel {
 
     init() {
         totalScore.asObservable().subscribe(onNext: { [weak self] (score) in
-            if score > 5 {
+            if score > 20 {
                 self?.state.onNext(.clear(score: score))
             }
         }).disposed(by: disposeBag)

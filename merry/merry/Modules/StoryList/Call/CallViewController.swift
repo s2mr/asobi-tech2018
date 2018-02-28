@@ -51,6 +51,7 @@ class CallViewController: UIViewController {
             let filePath = Bundle.main.path(forResource: "ring", ofType: "mp3")
             let audioPath = URL(fileURLWithPath: filePath!)
             audioPlayer = try AVAudioPlayer(contentsOf: audioPath)
+            audioPlayer.volume  = 0.3
             audioPlayer.numberOfLoops = -1
             audioPlayer.prepareToPlay()
             audioPlayer.play()
