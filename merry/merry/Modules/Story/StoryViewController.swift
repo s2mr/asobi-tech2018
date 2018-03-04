@@ -29,7 +29,6 @@ class StoryViewController: UIViewController {
 
         viewModel.nextChat()
         self.tableView.reloadData()
-        viewModel.state.onNext(.gameover)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
