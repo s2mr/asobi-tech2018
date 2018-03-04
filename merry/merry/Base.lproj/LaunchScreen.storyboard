@@ -19,13 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="9Xp-ha-nc2">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.13737426698207855" green="0.13737086951732635" blue="0.13737314939498901" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Xp-ha-nc2" secondAttribute="trailing" id="9Nx-mY-V2q"/>
-                            <constraint firstItem="9Xp-ha-nc2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mZ3-eZ-YbW"/>
+                            <constraint firstItem="9Xp-ha-nc2" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="mZ3-eZ-YbW"/>
                             <constraint firstItem="9Xp-ha-nc2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rB4-su-pDT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9Xp-ha-nc2" secondAttribute="bottom" id="tEx-AX-NgC"/>
                         </constraints>
@@ -34,7 +34,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
     <resources>
