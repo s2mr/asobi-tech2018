@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 import AVFoundation
 
 class StoryListViewController: UIViewController {
@@ -45,32 +46,29 @@ class StoryListViewController: UIViewController {
             let vc = UIStoryboard(name: "Info", bundle: nil).instantiateInitialViewController()!
             wself.navigationController?.pushViewController(vc, animated: true)
         }).disposed(by: disposeBag)
-    }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        switch AVCaptureDevice.authorizationStatus(for: AVMediaType.video) {
-        case .authorized:
-            break
-        default:
-            let alert = UIAlertController(title: "ささやかなアドバイス💫", message: "快適にお楽しみいただくために腕を伸ばしてプレイするとよいです👍ゲームオーバー時に演出効果のためカメラを利用します。", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "👍", style: .default) { _ in
-                AVCaptureDevice.requestAccess(for: .video) { [weak self] granted in
-                    //                guard  else { return }
-                    guard let wself = self, granted else { return }
-                    let alert = UIAlertController(title: "", message: "Thank you💫", preferredStyle: .alert)
-                    wself.present(alert, animated: true, completion: nil)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: { [weak self] in
-                        self?.dismiss(animated: true, completion: nil)
-                    })
+        self.rx.methodInvoked(#selector(viewDidAppear(_:))).asObservable().take(1).subscribe(onNext: { [weak self] _ in
+            guard let wself = self else { return }
+            switch AVCaptureDevice.authorizationStatus(for: AVMediaType.video) {
+            case .authorized:
+                break
+            default:
+                let alert = UIAlertController(title: "ささやかなアドバイス💫", message: "快適にお楽しみいただくために腕を伸ばしてプレイするとよいです👍ゲームオーバー時に演出効果のためカメラを利用します。", preferredStyle: .alert)
+                let ok = UIAlertAction(title: "👍", style: .default) { _ in
+                    AVCaptureDevice.requestAccess(for: .video) { granted in
+                        let alert = UIAlertController(title: "", message: "Thank you💫", preferredStyle: .alert)
+                        wself.present(alert, animated: true, completion: nil)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+                            wself.dismiss(animated: true, completion: nil)
+                        })
+                    }
                 }
+                let cancel = UIAlertAction(title: "👊", style: .cancel)
+                alert.addAction(ok)
+                alert.addAction(cancel)
+                wself.present(alert, animated: true, completion: nil)
             }
-            let cancel = UIAlertAction(title: "👊", style: .cancel)
-            alert.addAction(ok)
-            alert.addAction(cancel)
-            present(alert, animated: true, completion: nil)
-        }
+        }).disposed(by: disposeBag)
     }
 }
 
