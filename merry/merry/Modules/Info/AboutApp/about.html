@@ -8,26 +8,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
+
+    <style>
+        @media screen and (min-width:768px) {
+            .authors{
+                width: 500px;
+                margin: 0 auto;
+            }
+        }
+        @media screen and (min-width:1024px) {
+            .authors{
+                width: 600px;
+                margin: 0 auto;
+            }
+        }
+        h1{
+            font-size: 25px;
+        }
+        h2{
+            font-size: 20px;
+        }
+
+        img {
+            min-width: 100px;
+            width: 110px;
+            max-width: 200px;
+        }
+
+        .author-wrapper, .author-wrapper-left {
+            position: relative;
+            height: 145px; 
+        }
+        .author-wrapper .author-text {
+            position: absolute;
+            top: 20px;
+            left: 55px;
+            text-align: center;
+            padding-left: 80px;
+            padding-right: 15px;
+            display: block;
+            width: 200px;
+        }
+        .author-wrapper img {
+            position: absolute;
+            top: 0px;
+            left: 10px;
+            z-index: 100;
+            border-radius: 10px;
+        }
+        .author-wrapper-left img{
+            position: absolute;
+            top: 0px;
+            right: 10px;
+            z-index: 100;
+            border-radius: 10px;
+        }
+        .author-wrapper-left .author-text{
+            position: absolute;
+            top: 20px;
+            right: 55px;
+            text-align: center;
+            padding-right: 80px;
+            padding-left: 15px;
+            display: block;
+            width: 200px;
+        }
+        .authour-job {
+            color: #555;
+        }
+
+        .shimomura, .toba, .kimura, .okawa{
+            border-radius: 10px;
+        }
+        .shimomura {
+            border: 1px solid #00d0e1
+        }
+        .toba {
+            border: 1px solid #00c696
+        }
+        .kimura {
+            border: 1px solid #ff4d00
+        }
+        .okawa {
+            border: 1px solid #ffcf00
+        }
+    </style>
 </head>
 
 <body>
-    <h1>このアプリについて</h1>
-    <p>このアプリはワンダープラネット株式会社主催の「遊びtech」という２日間日程で開催されたハッカソンで作成したアプリです。</p>
+    <div class="authors">
+        <h1>このアプリについて</h1>
+        <p>このアプリはワンダープラネット株式会社主催の「遊びtech」という２日間日程で開催されたハッカソンで作成したアプリです。</p>
 
-    <h1>開発メンバー</h1>
-    <p>
-        <strong>開発</strong>：Kazumasa Shimomura
-    </p>
-    <p>
-        <strong>開発</strong>：Shunsuke Toba
-    </p>
-    <p>
-        <strong>デザイン</strong>：Yosuke Kimura
-    </p>
-    <p>
-        <strong>開発</strong>：Kyohei Okawa
-    </p>
-    <hr>
+        <h2>開発メンバー</h1>
+    
+        <div class="author-wrapper">
+            <a href="https://www.facebook.com/kaz.shimomura"><img src="../../../InfoImage/shimomura.png" alt=""></a>
+            <div class="author-text shimomura">
+                <p class="authour-name">Kazumasa Shimomura</p>
+                <p class="authour-job">Developer</p>
+            </div>
+        </div>
+        <div class="author-wrapper-left">
+            <a href="https://www.facebook.com/toba.shunsuke.tomatoaiu"><img src="../../../InfoImage/toba.jpg" alt=""></a>
+            <div class="author-text toba">
+                <p class="authour-name">Shunsuke Toba</p>
+                <p class="authour-job">Developer</p>
+            </div>
+        </div>
+        <div class="author-wrapper">
+            <a href="https://www.facebook.com/yo.suke196"><img src="../../../InfoImage/kimura.png" alt=""></a>
+            <div class="author-text kimura">
+                <p class="authour-name">Yosuke Kimura</p>
+                <p class="authour-job">Desinger</p>
+            </div>
+        </div>
+        <div class="author-wrapper-left">
+            <a href="https://www.facebook.com/kyouhei.ohkawa"><img src="../../../InfoImage/okawa.png" alt=""></a>
+            <div class="author-text okawa">
+                <p class="authour-name">Kyohei Okawa</p>
+                <p class="authour-job">Developer</p>
+            </div>
+        </div>
+    </div>
+    
 </body>
 
 </html>
