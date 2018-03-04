@@ -34,6 +34,12 @@
 		6E7BF4022045C7E700F60826 /* StoryFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BF4012045C7E700F60826 /* StoryFooterView.swift */; };
 		6E7BF40620464FDD00F60826 /* Clear.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E7BF40420464FDD00F60826 /* Clear.storyboard */; };
 		6E7BF40720464FDD00F60826 /* ClearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BF40520464FDD00F60826 /* ClearViewController.swift */; };
+		6EEE74C9204B8B59006F8433 /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EEE74C8204B8B59006F8433 /* Info.storyboard */; };
+		6EEE74CB204B8B79006F8433 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE74CA204B8B79006F8433 /* InfoViewController.swift */; };
+		6EEE74CF204B8D65006F8433 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE74CE204B8D65006F8433 /* LicenseViewController.swift */; };
+		6EEE74D1204B8D81006F8433 /* AboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE74D0204B8D81006F8433 /* AboutAppViewController.swift */; };
+		6EEE74D3204B9245006F8433 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 6EEE74D2204B9245006F8433 /* about.html */; };
+		6EEE74D5204B9519006F8433 /* license.html in Resources */ = {isa = PBXBuildFile; fileRef = 6EEE74D4204B9519006F8433 /* license.html */; };
 		D60301912045C0C300530BAD /* SupriseCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60301902045C0C300530BAD /* SupriseCameraViewController.swift */; };
 		D60301932045C18400530BAD /* SurpriseCamera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D60301922045C18400530BAD /* SurpriseCamera.storyboard */; };
 		D60301A12046548B00530BAD /* ComboManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60301A02046548B00530BAD /* ComboManager.swift */; };
@@ -73,6 +79,12 @@
 		6E7BF4012045C7E700F60826 /* StoryFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryFooterView.swift; sourceTree = "<group>"; };
 		6E7BF40420464FDD00F60826 /* Clear.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Clear.storyboard; sourceTree = "<group>"; };
 		6E7BF40520464FDD00F60826 /* ClearViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearViewController.swift; sourceTree = "<group>"; };
+		6EEE74C8204B8B59006F8433 /* Info.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Info.storyboard; sourceTree = "<group>"; };
+		6EEE74CA204B8B79006F8433 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		6EEE74CE204B8D65006F8433 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
+		6EEE74D0204B8D81006F8433 /* AboutAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewController.swift; sourceTree = "<group>"; };
+		6EEE74D2204B9245006F8433 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
+		6EEE74D4204B9519006F8433 /* license.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = license.html; sourceTree = "<group>"; };
 		9820E4943372C48FE2F9C23D /* Pods-merry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merry.release.xcconfig"; path = "Pods/Target Support Files/Pods-merry/Pods-merry.release.xcconfig"; sourceTree = "<group>"; };
 		B5FA9172C87F29DC27B1A6A5 /* Pods_merry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_merry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60301902045C0C300530BAD /* SupriseCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupriseCameraViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +163,7 @@
 		6E7BF3D7204568B100F60826 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6EEE74C7204B8B50006F8433 /* Info */,
 				6E7BF40320464FDD00F60826 /* Clear */,
 				D603018F2045C09700530BAD /* FrontCameraSurprise */,
 				6E7BF3DF20456FF600F60826 /* Story */,
@@ -242,6 +255,35 @@
 				6E7BF40520464FDD00F60826 /* ClearViewController.swift */,
 			);
 			path = Clear;
+			sourceTree = "<group>";
+		};
+		6EEE74C7204B8B50006F8433 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				6EEE74CC204B8BF1006F8433 /* AboutApp */,
+				6EEE74CD204B8BFD006F8433 /* License */,
+				6EEE74C8204B8B59006F8433 /* Info.storyboard */,
+				6EEE74CA204B8B79006F8433 /* InfoViewController.swift */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		6EEE74CC204B8BF1006F8433 /* AboutApp */ = {
+			isa = PBXGroup;
+			children = (
+				6EEE74D2204B9245006F8433 /* about.html */,
+				6EEE74D0204B8D81006F8433 /* AboutAppViewController.swift */,
+			);
+			path = AboutApp;
+			sourceTree = "<group>";
+		};
+		6EEE74CD204B8BFD006F8433 /* License */ = {
+			isa = PBXGroup;
+			children = (
+				6EEE74D4204B9519006F8433 /* license.html */,
+				6EEE74CE204B8D65006F8433 /* LicenseViewController.swift */,
+			);
+			path = License;
 			sourceTree = "<group>";
 		};
 		B80DCED89D422C3B2A7B801E /* Pods */ = {
@@ -349,9 +391,12 @@
 				2E963C2D204656F800D384EE /* CallViewCell.xib in Resources */,
 				6E7BF3CD204567C500F60826 /* Assets.xcassets in Resources */,
 				D623E8F72045A7E6001A47F5 /* ring.mp3 in Resources */,
+				6EEE74D3204B9245006F8433 /* about.html in Resources */,
 				D623E8FD2045B3EE001A47F5 /* why.mp3 in Resources */,
 				D623E8F420457AC4001A47F5 /* Call.storyboard in Resources */,
 				6E7BF3ED2045722600F60826 /* YourChatViewCell.xib in Resources */,
+				6EEE74C9204B8B59006F8433 /* Info.storyboard in Resources */,
+				6EEE74D5204B9519006F8433 /* license.html in Resources */,
 				6E7BF3EB2045722600F60826 /* MyChatViewCell.xib in Resources */,
 				6E7BF40620464FDD00F60826 /* Clear.storyboard in Resources */,
 				6E7BF3FB20459D7900F60826 /* StubChatText.json in Resources */,
@@ -434,7 +479,6 @@
 				6E7BF3E12045700600F60826 /* StoryViewController.swift in Sources */,
 				6E7BF3C8204567C500F60826 /* StoryListViewController.swift in Sources */,
 				2E963C2C204656F800D384EE /* CallViewCell.swift in Sources */,
-				D60301A72046598B00530BAD /* ClearViewController.swift in Sources */,
 				6E7BF3FD20459F3D00F60826 /* ChatManager.swift in Sources */,
 				6E7BF3EC2045722600F60826 /* YourChatViewCell.swift in Sources */,
 				6E7BF3DA204568CE00F60826 /* StoryListViewModel.swift in Sources */,
@@ -444,10 +488,13 @@
 				6E7BF3EF2045738400F60826 /* MyBalloonView.swift in Sources */,
 				6E7BF40720464FDD00F60826 /* ClearViewController.swift in Sources */,
 				6E7BF3DD2045697C00F60826 /* StoryListTableViewCell.swift in Sources */,
+				6EEE74D1204B8D81006F8433 /* AboutAppViewController.swift in Sources */,
 				D623E8F220457ABC001A47F5 /* CallViewController.swift in Sources */,
 				6E7BF3F520459BD400F60826 /* StoryViewModel.swift in Sources */,
+				6EEE74CF204B8D65006F8433 /* LicenseViewController.swift in Sources */,
 				6E7BF4022045C7E700F60826 /* StoryFooterView.swift in Sources */,
 				6E7BF3F3204573C000F60826 /* YourBalloonView.swift in Sources */,
+				6EEE74CB204B8B79006F8433 /* InfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

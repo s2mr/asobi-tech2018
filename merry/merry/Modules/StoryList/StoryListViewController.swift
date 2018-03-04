@@ -7,10 +7,28 @@
 //
 
 import UIKit
+import RxSwift
 
 class StoryListViewController: UIViewController {
 
+    private let disposeBag = DisposeBag()
+
     @IBOutlet weak var tableView: UITableView!
+    private let infoButton: UIButton = {
+        let b = UIButton(frame: .zero)
+        b.backgroundColor = .black
+        b.layer.cornerRadius = 30
+        return b
+    }()
+
+    override func loadView() {
+        super.loadView()
+        view.addSubview(infoButton)
+        infoButton.snp.makeConstraints {
+            $0.width.height.equalTo(60)
+            $0.right.bottom.equalToSuperview().offset(-30)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +38,19 @@ class StoryListViewController: UIViewController {
         tableView.rowHeight = 70
         tableView.estimatedRowHeight = UITableViewAutomaticDimension
 //        tableView.rowHeight
+
+        infoButton.rx.tap.subscribe(onNext: { [weak self] _ in
+            guard let wself = self else { return }
+            let vc = UIStoryboard(name: "Info", bundle: nil).instantiateInitialViewController()!
+            wself.navigationController?.pushViewController(vc, animated: true)
+        }).disposed(by: disposeBag)
     }
 }
 
 extension StoryListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
