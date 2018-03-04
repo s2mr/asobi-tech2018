@@ -27,6 +27,6 @@ class AboutAppViewController: UIViewController {
         super.viewDidLoad()
         let path = Bundle.main.path(forResource: "about", ofType: "html")!
         let data = try! Data(contentsOf: URL(fileURLWithPath: path))
-        webView.loadHTMLString(String.init(data: data, encoding: .utf8)!, baseURL: nil)
+        webView.loadHTMLString(String.init(data: data, encoding: .utf8)!, baseURL: URL(fileURLWithPath: path))
     }
 }
