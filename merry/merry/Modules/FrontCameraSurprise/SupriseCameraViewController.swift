@@ -61,6 +61,7 @@ class SupriseCameraViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         setupDisplay()
         setupCamera()
+        setupUI()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -92,41 +93,38 @@ class SupriseCameraViewController: UIViewController {
         camera = nil
     }
     
-    func setupDisplay(){
+    private func setupDisplay(){
         let screenWidth = UIScreen.main.bounds.size.width
         let screenHeight = UIScreen.main.bounds.size.height
         
         preView = UIView(frame: CGRect(x: 0.0, y: 0.0,width: screenWidth, height: screenHeight))
     }
     
-    func setupCamera(){
+    private func setupCamera(){
         session = AVCaptureSession()
 
         guard let camera = AVCaptureDevice.default(AVCaptureDevice.DeviceType.builtInWideAngleCamera,
                                                    for: AVMediaType.video, position: .front) else { return }
-
         do{
             input = try AVCaptureDeviceInput(device: camera)
         }catch let error {
             print(error)
         }
-        
         if session.canAddInput(input) {
             session.addInput(input)
         }
-        
         output = AVCapturePhotoOutput()
-        
         if session.canAddOutput(output) {
             session.addOutput(output)
         }
-        
         let previewLayer = AVCaptureVideoPreviewLayer(session: session)
-        
         previewLayer.frame = preView.frame
         previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         self.view.layer.addSublayer(previewLayer)
+        session.startRunning()
+    }
 
+    private func setupUI() {
         self.imageView = UIImageView(image: UIImage(named: "merry2"))
         self.view.addSubview(self.imageView)
         self.imageView.snp.makeConstraints {
@@ -164,7 +162,6 @@ class SupriseCameraViewController: UIViewController {
             $0.bottom.equalTo(restartButton.snp.top).offset(-30)
             $0.centerX.equalTo(restartButton.snp.centerX)
         }
-        session.startRunning()
     }
 
     public func playVoice(fileName:String,type:String){
