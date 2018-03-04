@@ -10,6 +10,13 @@ import UIKit
 
 class AboutAppViewController: UIViewController {
 
+    private let progressBar: UIProgressView = {
+        let p = UIProgressView(frame: .zero)
+        p.progressViewStyle = .bar
+        p.clipsToBounds = true
+        return p
+    }()
+
     private let webView: UIWebView = {
         let v = UIWebView(frame: .zero)
         return v
@@ -17,9 +24,17 @@ class AboutAppViewController: UIViewController {
 
     override func loadView() {
         super.loadView()
+        view.addSubview(progressBar)
+        progressBar.snp.makeConstraints {
+            $0.left.right.equalToSuperview()
+            $0.top.equalToSuperview().offset(navigationController!.navigationBar.frame.size.height)
+            $0.height.equalTo(10)
+        }
+
         view.addSubview(webView)
         webView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.equalTo(progressBar.snp.bottom)
+            $0.left.right.bottom.equalToSuperview()
         }
     }
 
@@ -28,5 +43,18 @@ class AboutAppViewController: UIViewController {
         let path = Bundle.main.path(forResource: "about", ofType: "html")!
         let data = try! Data(contentsOf: URL(fileURLWithPath: path))
         webView.loadHTMLString(String.init(data: data, encoding: .utf8)!, baseURL: URL(fileURLWithPath: path))
+        webView.delegate = self
+    }
+}
+
+
+extension AboutAppViewController: UIWebViewDelegate {
+    func webViewDidStartLoad(_ webView: UIWebView) {
+//        let timer = Timer(timeInterval: 0.1, repeats: true) { [weak self] (timer) in
+//            guard let wself = self else { return }
+//            if wself.progressBar.progress > 0.9 { return }
+//            wself.progressBar.progress += 0.02
+//        }
+//        timer.fire()
     }
 }
