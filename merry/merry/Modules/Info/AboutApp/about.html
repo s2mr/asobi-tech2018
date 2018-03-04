@@ -26,6 +26,9 @@
             background-color: #2e2e2e;
             color: #FEFEFE;
         }
+        a{
+            color: #FEFEFE;
+        }
         h1{
             font-size: 25px;
         }
@@ -39,14 +42,16 @@
             width: 110px;
             max-width: 200px;
         }
-
+        .author-sns{
+            position: relative;
+        }
         .author-wrapper, .author-wrapper-left {
             position: relative;
             height: 145px; 
         }
         .author-wrapper .author-text {
             position: absolute;
-            top: 20px;
+            top: 25px;
             left: 55px;
             text-align: center;
             padding-left: 80px;
@@ -55,6 +60,45 @@
             width: 200px;
             background-color: #FEFEFE;
             color: #222;
+        }
+        .author-wrapper .authour-facebook {
+            display: block;
+            background-color: #234243;
+            height: 20px;
+            width: 20px;
+            text-align: center;
+            border-radius: 5px;
+            position: absolute;
+            top: -25px;
+            right: -5px;        
+            line-height: 22px;
+            text-decoration: none;
+        }
+        .author-wrapper .authour-twitter {
+            display: block;
+            background-color: #234243;
+            height: 20px;
+            width: 20px;
+            text-align: center;
+            border-radius: 5px;
+            position: absolute;
+            top: -25px;
+            right: 20px;
+            line-height: 22px;
+            text-decoration: none;
+        }
+        .author-wrapper-left .authour-facebook {
+            display: block;
+            background-color: #234243;
+            height: 20px;
+            width: 20px;
+            text-align: center;
+            border-radius: 5px;
+            position: absolute;
+            top: -25px;
+            left: -5px;
+            line-height: 22px;
+            text-decoration: none;
         }
         .author-wrapper img {
             position: absolute;
@@ -70,9 +114,10 @@
             z-index: 100;
             border-radius: 10px;
         }
+        
         .author-wrapper-left .author-text{
             position: absolute;
-            top: 20px;
+            top: 25px;
             right: 55px;
             text-align: center;
             padding-right: 80px;
@@ -112,10 +157,16 @@
         <h2>開発メンバー</h2>
     
         <div class="author-wrapper">
-            <a href="https://www.facebook.com/kaz.shimomura"><img src="./shimomura.png" alt=""></a>
+            <a href="https://www.facebook.com/kaz.shimomura"><img src="shimomura.png" alt=""></a>
             <div class="author-text shimomura">
                 <p class="authour-name">Kazumasa Shimomura</p>
                 <p class="authour-job">Developer</p>
+                <div class="author-sns">
+                    <a href="https://www.facebook.com/kaz.shimomura" class="authour-facebook">f</a>
+                </div>
+                <div class="author-sns">
+                    <a href="https://twitter.com/_kzumu" class="authour-twitter">t</a>
+                </div>
             </div>
         </div>
         <div class="author-wrapper-left">
@@ -123,13 +174,19 @@
             <div class="author-text toba">
                 <p class="authour-name">Shunsuke Toba</p>
                 <p class="authour-job">Developer</p>
+                <div class="author-sns">
+                    <a href="https://www.facebook.com/toba.shunsuke.tomatoaiu" class="authour-facebook">f</a>
+                </div>
             </div>
         </div>
         <div class="author-wrapper">
             <a href="https://www.facebook.com/yo.suke196"><img src="kimura.png" alt=""></a>
             <div class="author-text kimura">
                 <p class="authour-name">Yosuke Kimura</p>
-                <p class="authour-job">Desinger</p>
+                <p class="authour-job">Designer</p>
+                <div class="author-sns">
+                    <a href="https://www.facebook.com/yo.suke196" class="authour-facebook">f</a>
+                </div>
             </div>
         </div>
         <div class="author-wrapper-left">
@@ -137,6 +194,9 @@
             <div class="author-text okawa">
                 <p class="authour-name">Kyohei Okawa</p>
                 <p class="authour-job">Developer</p>
+                <div class="author-sns">
+                    <a href="https://www.facebook.com/kyouhei.ohkawa" class="authour-facebook">f</a>
+                </div>
             </div>
         </div>
     </div>
