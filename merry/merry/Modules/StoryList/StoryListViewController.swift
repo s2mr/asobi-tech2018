@@ -46,16 +46,16 @@ extension StoryListViewController: UITableViewDelegate {
         } else if indexPath.row == 1 {
             let vc = UIStoryboard(name: "Call", bundle: nil).instantiateInitialViewController()!
 
-//            present(vc, animated: true, completion: nil)
-            self.navigationController?.pushViewController(vc, animated: true)
+            present(vc, animated: true, completion: nil)
+//            self.navigationController?.pushViewController(vc, animated: true)
         }else if indexPath.row == 2{
             let vc = UIStoryboard(name: "SurpriseCamera", bundle: nil).instantiateInitialViewController()!
-            
-            self.navigationController?.pushViewController(vc, animated: false)
+            present(vc, animated: true, completion: nil)
+//            self.navigationController?.pushViewController(vc, animated: false)
         }else if indexPath.row == 3{
             let vc = UIStoryboard(name: "Clear", bundle: nil).instantiateInitialViewController()!
-            
-            self.navigationController?.pushViewController(vc, animated: false)
+            present(vc, animated: true, completion: nil)
+//            self.navigationController?.pushViewController(vc, animated: false)
         }
     }
 }

@@ -24,16 +24,27 @@ class SupriseCameraViewController: UIViewController {
     
     var preView:UIView!
     var camera:AVCaptureDevice!
+    @IBOutlet weak var restartButton: UIButton!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        restartButton.layer.cornerRadius = 8
+        restartButton.layer.masksToBounds = true
+        restartButton.alpha = 0.0
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setupDisplay()
         setupCamera()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        restartButton.alpha = 0.0
+        UIView.animate(withDuration: 1.0) { [weak self] in
+            self?.restartButton.alpha = 0.7
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -64,9 +75,10 @@ class SupriseCameraViewController: UIViewController {
     
     func setupCamera(){
         session = AVCaptureSession()
-        
-        camera = AVCaptureDevice.default(AVCaptureDevice.DeviceType.builtInWideAngleCamera, for: AVMediaType.video, position: .front)
-        
+
+        guard let camera = AVCaptureDevice.default(AVCaptureDevice.DeviceType.builtInWideAngleCamera,
+                                                   for: AVMediaType.video, position: .front) else { return }
+
         do{
             input = try AVCaptureDeviceInput(device: camera)
         }catch let error {
@@ -129,4 +141,12 @@ class SupriseCameraViewController: UIViewController {
             print("error play merry voice")
         }
     }
+
+    @IBAction func restartButtonTapped(_ sender: Any) {
+        guard let ancestor = presentingViewController as? UINavigationController else { return }
+        self.dismiss(animated: true) {
+            ancestor.popToRootViewController(animated: true)
+        }
+    }
+
 }
