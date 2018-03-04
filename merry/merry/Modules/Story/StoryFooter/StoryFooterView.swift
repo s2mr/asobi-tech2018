@@ -14,6 +14,7 @@ class StoryFooterView: UIView {
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
+    @IBOutlet weak var scoreLabel: UILabel!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
