@@ -29,7 +29,6 @@ class StoryViewController: UIViewController {
 
         viewModel.nextChat()
         self.tableView.reloadData()
-        viewModel.state.onNext(.gameover)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -77,6 +76,11 @@ extension StoryViewController {
             .subscribe(onNext: { [weak self] (str) in
                 self?.footerView.button3.setTitle(str, for: .normal)
             }).disposed(by: disposeBag)
+
+        viewModel.totalScore.asDriver()
+            .map { "Score: \($0)" }
+            .drive(footerView.scoreLabel.rx.text)
+            .disposed(by: disposeBag)
         
         let screenWidth = UIScreen.main.bounds.size.width
         let screenHeight = UIScreen.main.bounds.size.height
