@@ -14,27 +14,38 @@ import AVFoundation
 import RxSwift
 
 class SupriseCameraViewController: UIViewController {
-    var audioPlayer = AVAudioPlayer()
+    var audioPlayer: AVAudioPlayer!
     
-    var imageView:UIImageView!
-    var timer = Timer()
-    
-    var input:AVCaptureDeviceInput!
-    var output:AVCapturePhotoOutput!
-    var session:AVCaptureSession!
+    var imageView: UIImageView!
+
+    var input: AVCaptureDeviceInput!
+    var output: AVCapturePhotoOutput!
+    var session: AVCaptureSession!
 
     let disposeBag = DisposeBag()
     
     var preView:UIView!
     var camera:AVCaptureDevice!
-    var restartButton: UIButton = {
+    let restartButton: UIButton = {
         let b = UIButton(frame: .zero)
         b.setTitle("もう一度プレイする", for: .normal)
         b.layer.cornerRadius = 8
         b.layer.masksToBounds = true
         b.backgroundColor = .black
         b.alpha = 0.0
+        b.sizeToFit()
         return b
+    }()
+
+    let gameoverLabel: UILabel = {
+        let l = UILabel(frame: .zero)
+        l.text = "Gameover"
+        l.sizeToFit()
+        l.font = UIFont(name: "Futura-CondensedExtraBold", size: 50)
+        l.textAlignment = .center
+        l.textColor = .white
+        l.alpha = 0.0
+        return l
     }()
 
     override func viewDidLoad() {
@@ -57,6 +68,7 @@ class SupriseCameraViewController: UIViewController {
         DispatchQueue.main.async {
             UIView.animate(withDuration: 3.0, delay: 0.0, options: .allowUserInteraction, animations: { [weak self] in
                 self?.restartButton.alpha = 0.7
+                self?.gameoverLabel.alpha = 1.0
             }, completion: nil)
         }
     }
@@ -99,13 +111,13 @@ class SupriseCameraViewController: UIViewController {
             print(error)
         }
         
-        if(session.canAddInput(input)){
+        if session.canAddInput(input) {
             session.addInput(input)
         }
         
         output = AVCapturePhotoOutput()
         
-        if(session.canAddOutput(output)){
+        if session.canAddOutput(output) {
             session.addOutput(output)
         }
         
@@ -114,17 +126,24 @@ class SupriseCameraViewController: UIViewController {
         previewLayer.frame = preView.frame
         previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         self.view.layer.addSublayer(previewLayer)
-        
-        let screenWidth = UIScreen.main.bounds.size.width
-        let screenHeight = UIScreen.main.bounds.size.height
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
-            self.imageView = UIImageView(frame: CGRect(x: (screenWidth/2.0)-50+80, y: (screenHeight/2.0)-50-100, width: 10, height: 10))
-            self.imageView.image = UIImage(named: "merry2")
-            self.view.layer.addSublayer(self.imageView.layer)
-            self.timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: self.big)
+
+        self.imageView = UIImageView(image: UIImage(named: "merry2"))
+        self.view.addSubview(self.imageView)
+        self.imageView.snp.makeConstraints {
+            $0.size.equalTo(0)
+            $0.top.equalToSuperview().offset(20)
+            $0.right.equalToSuperview()//.offset(-20)
         }
-        
+
+        self.imageView.frame.size = CGSize(width: 30, height: 30)
+
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.imageView.frame.origin = CGPoint(x: self.view.frame.width-200, y: 30)
+                self.imageView.frame.size = CGSize(width: 200, height: 200)
+            })
+        }
+
         let image = UIImage(named: "camera_flame")
         let v = UIImageView(frame: self.view.frame)
         v.alpha = 1.0
@@ -138,23 +157,16 @@ class SupriseCameraViewController: UIViewController {
             $0.width.equalTo(200)
             $0.height.equalTo(45)
         }
+
+        self.view.addSubview(gameoverLabel)
+        gameoverLabel.snp.makeConstraints {
+            $0.height.equalTo(60)
+            $0.bottom.equalTo(restartButton.snp.top).offset(-30)
+            $0.centerX.equalTo(restartButton.snp.centerX)
+        }
         session.startRunning()
     }
-    
-    func big(timer: Timer){
-        let screenWidth = UIScreen.main.bounds.size.width
-        let screenHeight = UIScreen.main.bounds.size.height
-        
-        let size = imageView.frame.width
-        
-        imageView.frame = CGRect(x: (screenWidth/2.0)-(size/2.0)+80, y: (screenHeight/2.0)-(size/2.0) - 100, width: size*1.04, height: size*1.04)
-        
-        if size >= 200 {
-            playVoice(fileName: "shout", type: "mp3")
-            timer.invalidate()
-        }
-    }
-    
+
     public func playVoice(fileName:String,type:String){
         do{
             let filePath = Bundle.main.path(forResource: fileName, ofType: type)
