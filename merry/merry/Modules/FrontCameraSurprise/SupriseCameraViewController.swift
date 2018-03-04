@@ -11,6 +11,7 @@ import AVFoundation
 import SnapKit
 import AudioToolbox
 import AVFoundation
+import RxSwift
 
 class SupriseCameraViewController: UIViewController {
     var audioPlayer = AVAudioPlayer()
@@ -21,17 +22,29 @@ class SupriseCameraViewController: UIViewController {
     var input:AVCaptureDeviceInput!
     var output:AVCapturePhotoOutput!
     var session:AVCaptureSession!
+
+    let disposeBag = DisposeBag()
     
     var preView:UIView!
     var camera:AVCaptureDevice!
-    @IBOutlet weak var restartButton: UIButton!
+    var restartButton: UIButton = {
+        let b = UIButton(frame: .zero)
+        b.setTitle("もう一度プレイする", for: .normal)
+        b.layer.cornerRadius = 8
+        b.layer.masksToBounds = true
+        b.backgroundColor = .black
+        b.alpha = 0.0
+        return b
+    }()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        restartButton.layer.cornerRadius = 8
-        restartButton.layer.masksToBounds = true
-        restartButton.alpha = 0.0
+        restartButton.rx.tap.subscribe(onNext: { [weak self] _ in
+            guard let ancestor = self?.presentingViewController as? UINavigationController else { return }
+            self?.dismiss(animated: true) {
+                ancestor.popToRootViewController(animated: true)
+            }
+        }).disposed(by: disposeBag)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,9 +54,10 @@ class SupriseCameraViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        restartButton.alpha = 0.0
-        UIView.animate(withDuration: 1.0) { [weak self] in
-            self?.restartButton.alpha = 0.7
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 3.0, delay: 0.0, options: .allowUserInteraction, animations: { [weak self] in
+                self?.restartButton.alpha = 0.7
+            }, completion: nil)
         }
     }
     
@@ -99,10 +113,7 @@ class SupriseCameraViewController: UIViewController {
         
         previewLayer.frame = preView.frame
         previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        
         self.view.layer.addSublayer(previewLayer)
-        
-        
         
         let screenWidth = UIScreen.main.bounds.size.width
         let screenHeight = UIScreen.main.bounds.size.height
@@ -119,7 +130,14 @@ class SupriseCameraViewController: UIViewController {
         v.alpha = 1.0
         v.image = image
         self.view.addSubview(v)
-        
+
+        self.view.addSubview(restartButton)
+        restartButton.snp.makeConstraints {
+            $0.bottom.equalToSuperview().offset(-40)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(200)
+            $0.height.equalTo(45)
+        }
         session.startRunning()
     }
     
@@ -149,12 +167,4 @@ class SupriseCameraViewController: UIViewController {
             print("error play merry voice")
         }
     }
-
-    @IBAction func restartButtonTapped(_ sender: Any) {
-        guard let ancestor = presentingViewController as? UINavigationController else { return }
-        self.dismiss(animated: true) {
-            ancestor.popToRootViewController(animated: true)
-        }
-    }
-
 }

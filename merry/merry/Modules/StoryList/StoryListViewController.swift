@@ -71,8 +71,6 @@ class StoryListViewController: UIViewController {
             alert.addAction(cancel)
             present(alert, animated: true, completion: nil)
         }
-
-
     }
 }
 

@@ -17,32 +17,9 @@
                     <view key="view" contentMode="scaleToFill" id="F0o-gn-jj7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SnL-X6-01E">
-                                <rect key="frame" x="112" y="517" width="150" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.70451626712328763" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="13T-pI-2vH"/>
-                                    <constraint firstAttribute="height" constant="50" id="Tu6-xT-vQO"/>
-                                </constraints>
-                                <state key="normal" title="もう一度プレイする">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="restartButtonTapped:" destination="avx-UW-HF1" eventType="touchUpInside" id="4DK-cw-8x3"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="dtr-vp-B4H" firstAttribute="bottom" secondItem="SnL-X6-01E" secondAttribute="bottom" constant="100" id="V6L-vI-ABi"/>
-                            <constraint firstItem="SnL-X6-01E" firstAttribute="centerX" secondItem="F0o-gn-jj7" secondAttribute="centerX" id="np5-dX-mue"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dtr-vp-B4H"/>
                     </view>
-                    <connections>
-                        <outlet property="restartButton" destination="SnL-X6-01E" id="eY0-Lb-1yx"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Stp-os-6Pa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
