@@ -22,19 +22,30 @@ class AboutAppViewController: UIViewController {
         return v
     }()
 
+    private let spinner: UIActivityIndicatorView = {
+        let s = UIActivityIndicatorView(frame: .zero)
+//        s.isHidden = true
+        s.activityIndicatorViewStyle = .gray
+        return s
+    }()
+
     override func loadView() {
         super.loadView()
-        view.addSubview(progressBar)
-        progressBar.snp.makeConstraints {
-            $0.left.right.equalToSuperview()
-            $0.top.equalToSuperview().offset(navigationController!.navigationBar.frame.size.height)
-            $0.height.equalTo(10)
-        }
+//        view.addSubview(progressBar)
+//        progressBar.snp.makeConstraints {
+//            $0.left.right.equalToSuperview()
+//            $0.top.equalToSuperview().offset(navigationController!.navigationBar.frame.size.height)
+//            $0.height.equalTo(10)
+//        }
 
         view.addSubview(webView)
         webView.snp.makeConstraints {
-            $0.top.equalTo(progressBar.snp.bottom)
-            $0.left.right.bottom.equalToSuperview()
+            $0.edges.equalToSuperview()
+        }
+
+        view.addSubview(spinner)
+        spinner.snp.makeConstraints {
+            $0.center.equalToSuperview()
         }
     }
 
@@ -56,5 +67,10 @@ extension AboutAppViewController: UIWebViewDelegate {
 //            wself.progressBar.progress += 0.02
 //        }
 //        timer.fire()
+        spinner.startAnimating()
+    }
+
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        spinner.stopAnimating()
     }
 }
