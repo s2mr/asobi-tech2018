@@ -24,8 +24,8 @@ class AboutAppViewController: UIViewController {
 
     private let spinner: UIActivityIndicatorView = {
         let s = UIActivityIndicatorView(frame: .zero)
-//        s.isHidden = true
-        s.activityIndicatorViewStyle = .gray
+        s.activityIndicatorViewStyle = .whiteLarge
+        s.color = UIColor.darkGray
         return s
     }()
 
