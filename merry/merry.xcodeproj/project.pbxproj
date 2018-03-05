@@ -10,9 +10,9 @@
 		2E963C2C204656F800D384EE /* CallViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E963C2A204656F800D384EE /* CallViewCell.swift */; };
 		2E963C2D204656F800D384EE /* CallViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E963C2B204656F800D384EE /* CallViewCell.xib */; };
 		6B478604BEE62FE7BBC0599B /* Pods_merry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5FA9172C87F29DC27B1A6A5 /* Pods_merry.framework */; };
+		6E34BE0A204CF64E00B496AA /* shimomura.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6E34BE09204CF64E00B496AA /* shimomura.jpg */; };
 		6E3E3844204C27F700D362FC /* kimura.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E3E3840204C27F700D362FC /* kimura.png */; };
 		6E3E3845204C27F700D362FC /* okawa.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E3E3841204C27F700D362FC /* okawa.png */; };
-		6E3E3846204C27F700D362FC /* shimomura.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E3E3842204C27F700D362FC /* shimomura.png */; };
 		6E3E3847204C27F700D362FC /* toba.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6E3E3843204C27F700D362FC /* toba.jpg */; };
 		6E7BF3C6204567C500F60826 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BF3C5204567C500F60826 /* AppDelegate.swift */; };
 		6E7BF3C8204567C500F60826 /* StoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BF3C7204567C500F60826 /* StoryListViewController.swift */; };
@@ -57,9 +57,9 @@
 /* Begin PBXFileReference section */
 		2E963C2A204656F800D384EE /* CallViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallViewCell.swift; sourceTree = "<group>"; };
 		2E963C2B204656F800D384EE /* CallViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CallViewCell.xib; sourceTree = "<group>"; };
+		6E34BE09204CF64E00B496AA /* shimomura.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shimomura.jpg; sourceTree = "<group>"; };
 		6E3E3840204C27F700D362FC /* kimura.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kimura.png; sourceTree = "<group>"; };
 		6E3E3841204C27F700D362FC /* okawa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = okawa.png; sourceTree = "<group>"; };
-		6E3E3842204C27F700D362FC /* shimomura.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shimomura.png; sourceTree = "<group>"; };
 		6E3E3843204C27F700D362FC /* toba.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = toba.jpg; sourceTree = "<group>"; };
 		6E7BF3C2204567C500F60826 /* merry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = merry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E7BF3C5204567C500F60826 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,9 +138,9 @@
 		6E3E3848204C299D00D362FC /* Img */ = {
 			isa = PBXGroup;
 			children = (
+				6E34BE09204CF64E00B496AA /* shimomura.jpg */,
 				6E3E3840204C27F700D362FC /* kimura.png */,
 				6E3E3841204C27F700D362FC /* okawa.png */,
-				6E3E3842204C27F700D362FC /* shimomura.png */,
 				6E3E3843204C27F700D362FC /* toba.jpg */,
 			);
 			path = Img;
@@ -416,7 +416,6 @@
 				D623E8FD2045B3EE001A47F5 /* why.mp3 in Resources */,
 				D623E8F420457AC4001A47F5 /* Call.storyboard in Resources */,
 				6E7BF3ED2045722600F60826 /* YourChatViewCell.xib in Resources */,
-				6E3E3846204C27F700D362FC /* shimomura.png in Resources */,
 				6E3E3844204C27F700D362FC /* kimura.png in Resources */,
 				6E3E3847204C27F700D362FC /* toba.jpg in Resources */,
 				6EEE74C9204B8B59006F8433 /* Info.storyboard in Resources */,
@@ -427,6 +426,7 @@
 				6E7BF3E32045700D00F60826 /* Story.storyboard in Resources */,
 				6E7BF3CB204567C500F60826 /* StoryList.storyboard in Resources */,
 				6E7BF3DE2045697C00F60826 /* StoryListTableViewCell.xib in Resources */,
+				6E34BE0A204CF64E00B496AA /* shimomura.jpg in Resources */,
 				6E7BF4002045C19900F60826 /* StoryFooterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
