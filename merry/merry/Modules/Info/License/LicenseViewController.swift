@@ -1,11 +1,3 @@
-//
-//  LicenseViewController.swift
-//  merry
-//
-//  Created by 下村一将 on 2018/03/04.
-//  Copyright © 2018年 kazu. All rights reserved.
-//
-
 import UIKit
 
 class LicenseViewController: UIViewController {

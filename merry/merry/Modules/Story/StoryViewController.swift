@@ -187,12 +187,14 @@ extension StoryViewController {
             case .clear(let score):
                 print("[state] clear")
                 let vc = UIStoryboard(name: "Clear", bundle: nil).instantiateInitialViewController() as! ClearViewController
+                vc.modalPresentationStyle = .fullScreen
                 vc.displayScore = score
                 vc.parentVC = self
                 self.present(vc, animated: false, completion: nil)
             case .gameover:
                 print("[state] gameover")
                 let vc = UIStoryboard(name: "SurpriseCamera", bundle: nil).instantiateInitialViewController() as! SupriseCameraViewController
+                vc.modalPresentationStyle = .fullScreen
                 self.present(vc, animated: false, completion: nil)
             }
         }).disposed(by: disposeBag)
