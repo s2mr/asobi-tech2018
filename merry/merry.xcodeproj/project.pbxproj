@@ -355,7 +355,6 @@
 				6E7BF3BF204567C500F60826 /* Frameworks */,
 				6E7BF3C0204567C500F60826 /* Resources */,
 				1A0299D43C0EC92682EE2138 /* [CP] Embed Pods Frameworks */,
-				81C7872C7C1C74457684FA38 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -458,7 +457,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-merry/Pods-merry-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-merry/Pods-merry-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -473,22 +472,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-merry/Pods-merry-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		81C7872C7C1C74457684FA38 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-merry/Pods-merry-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-merry/Pods-merry-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

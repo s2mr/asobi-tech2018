@@ -16,22 +16,14 @@ class CallViewController: UIViewController {
     
     var timer = Timer()
     
-    var audioPlayer = AVAudioPlayer()
+    var audioPlayer: AVAudioPlayer!
 
     let disposeBag = DisposeBag()
     
     public var talkString: String!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
-//        button.backgroundColor = .blue
-//        button.setTitle("X", for: .normal)
-//        button.rx.tap.subscribe(onNext: { [weak self] _ in
-//            self?.dismiss(animated: false, completion: nil)
-//        }).disposed(by: disposeBag)
-//        self.view.addSubview(button)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -180,6 +180,7 @@ extension StoryViewController {
                 print("[state] calling")
                 DispatchQueue.main.asyncAfter(deadline: .now()+0.8, execute: {
                     let vc = UIStoryboard(name: "Call", bundle: nil).instantiateInitialViewController() as! CallViewController
+                    vc.modalPresentationStyle = .fullScreen
                     vc.talkString = chat.text
                     self.present(vc, animated: false, completion: nil)
                 })
